@@ -1,227 +1,233 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Desri Mini Library</title>
+<meta charset="UTF-8">
+<title>Desri Mini Library</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0a0f1c;
+        color: white;
+    }
 
-        /* BACKGROUND */
-        .background {
-            background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-        }
+    /* NAVBAR */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0b1c2d;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
 
-        /* SIDEBAR MENU */
-        .sidebar {
-            width: 230px;
-            background-color: rgba(5, 15, 30, 0.9);
-            padding: 30px 20px;
-            position: fixed;
-            height: 100%;
-        }
+    nav h2 {
+        margin: 0;
+        color: #4da6ff;
+    }
 
-        .sidebar h2 {
-            text-align: center;
-            color: #4da6ff;
-            margin-bottom: 30px;
-        }
+    nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
 
-        .sidebar a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            margin: 15px 0;
-            font-size: 16px;
-        }
+    nav ul li {
+        margin-left: 20px;
+    }
 
-        .sidebar a:hover {
-            color: #4da6ff;
-        }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-        /* CONTENT */
-        .content {
-            margin-left: 260px;
-            padding: 60px 50px;
-            background-color: rgba(0, 0, 0, 0.65);
-            min-height: 100vh;
-        }
+    nav ul li a:hover {
+        color: #4da6ff;
+    }
 
-        section {
-            margin-bottom: 100px;
-        }
+    /* SECTION */
+    section {
+        display: none;
+        padding: 120px 50px 50px;
+        min-height: 100vh;
+    }
 
-        h1 {
-            color: #4da6ff;
-            font-size: 46px;
-        }
+    section.active {
+        display: block;
+    }
 
-        h3 {
-            color: #4da6ff;
-            font-size: 28px;
-        }
+    /* HOME */
+    #home {
+        background: linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)
+        ),
+        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+    }
 
-        p, li {
-            font-size: 17px;
-            line-height: 1.7;
-            max-width: 900px;
-        }
+    #home h1 {
+        font-size: 55px;
+        color: #4da6ff;
+        margin-top: 100px;
+    }
 
-        /* KOLEKSI */
-        .koleksi a {
-            color: #ffd966;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    #home p {
+        font-size: 20px;
+        max-width: 700px;
+        margin: auto;
+        color: #e0e6f0;
+    }
 
-        .koleksi a:hover {
-            text-decoration: underline;
-        }
+    /* CONTENT */
+    h3 {
+        color: #4da6ff;
+        margin-bottom: 15px;
+    }
 
-        /* FORM */
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0 15px;
-            border-radius: 5px;
-            border: none;
-        }
+    a.link {
+        color: #4da6ff;
+        text-decoration: none;
+    }
 
-        button {
-            padding: 10px 20px;
-            background-color: #4da6ff;
-            border: none;
-            color: white;
-            font-size: 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    a.link:hover {
+        text-decoration: underline;
+    }
 
-        button:hover {
-            background-color: #3b8edb;
-        }
-    </style>
+    /* FORM */
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #4da6ff;
+        border: none;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #3399ff;
+    }
+</style>
 </head>
+
 <body>
 
-<div class="background">
+<!-- NAVBAR -->
+<nav>
+    <h2>Desri Mini Library</h2>
+    <ul>
+        <li><a onclick="showSection('home')">Beranda</a></li>
+        <li><a onclick="showSection('koleksi')">Koleksi</a></li>
+        <li><a onclick="showSection('layanan')">Layanan</a></li>
+        <li><a onclick="showSection('kontak')">Kontak</a></li>
+        <li><a onclick="showSection('tentang')">Tentang</a></li>
+    </ul>
+</nav>
 
-    <!-- SIDEBAR MENU -->
-    <div class="sidebar">
-        <h2>Menu</h2>
-        <a href="#beranda">Beranda</a>
-        <a href="#koleksi">Koleksi</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#kontak">Kontak</a>
-        <a href="#tentang">Tentang</a>
-    </div>
+<!-- HOME -->
+<section id="home" class="active">
+    <h1>Selamat Datang di Desri Mini Library</h1>
+    <p>
+        Desri Mini Library adalah perpustakaan personal berbasis web yang dibuat
+        sebagai sarana pembelajaran, pengembangan web perpustakaan, dan penyedia
+        informasi sederhana yang mudah diakses kapan saja.
+    </p>
+</section>
 
-    <!-- ISI WEBSITE -->
-    <div class="content">
+<!-- KOLEKSI -->
+<section id="koleksi">
+    <h3>Koleksi E-Book</h3>
+    <p>
+        <strong>Kumpulan Dongeng Anak</strong><br>
+        E-book dongeng anak yang berisi cerita Putri Malu dan Cermin Ajaib
+        yang dapat dibaca secara daring melalui platform Scribd.<br><br>
 
-        <!-- BERANDA -->
-        <section id="beranda">
-            <h1>Selamat Datang di Desri Mini Library</h1>
-            <p>
-                Desri Mini Library merupakan website perpustakaan personal yang
-                dibuat sebagai media informasi koleksi dan layanan perpustakaan
-                berbasis web. Website ini bertujuan untuk mendukung pembelajaran,
-                literasi, serta pengembangan pemahaman mengenai pengelolaan
-                perpustakaan di era digital.
-            </p>
-        </section>
+        <a class="link" href="https://www.scribd.com/document/330073016/Dongeng-Anak-Putri-Malu-Dan-Cermin-Ajaib" target="_blank">
+            Klik di sini untuk membaca e-book
+        </a>
+    </p>
+</section>
 
-        <!-- KOLEKSI -->
-        <section id="koleksi">
-            <h3>Koleksi E-Book</h3>
-            <div class="koleksi">
-                <p>
-                    <strong>1. Dongeng Anak: Putri Malu</strong><br>
-                    <a href="https://www.scribd.com/document/330073016/Dongeng-Anak-Putri-Malu-Dan-Cermin-Ajaib" target="_blank">
-                        Baca E-Book
-                    </a>
-                </p>
 
-                <p>
-                    <strong>2. Dongeng Anak: Cermin Ajaib</strong><br>
-                    <a href="https://www.scribd.com/document/330073016/Dongeng-Anak-Putri-Malu-Dan-Cermin-Ajaib" target="_blank">
-                        Baca E-Book
-                    </a>
-                </p>
-            </div>
-        </section>
+<!-- LAYANAN -->
+<section id="layanan">
+    <h3>Jam Operasional</h3>
+    <p>
+        Senin – Kamis : 09.00 WIB – 16.00 WIB<br>
+        Jumat – Sabtu : 09.00 WIB – 15.00 WIB<br>
+        Minggu : Tutup
+    </p>
 
-        <!-- LAYANAN -->
-        <section id="layanan">
-            <h3>Layanan Perpustakaan</h3>
-            <p><strong>Jam Operasional:</strong></p>
-            <ul>
-                <li>Senin – Kamis: 09.00 WIB – 16.00 WIB</li>
-                <li>Jumat – Sabtu: 09.00 WIB – 15.00 WIB</li>
-                <li>Minggu: Tutup</li>
-            </ul>
+    <h3>Lokasi</h3>
+    <p>Jalan Sinarja No. 13, Padang Bulan, Medan</p>
+</section>
 
-            <p>
-                <strong>Lokasi:</strong><br>
-                Jalan Sinarja, No. 13, Padang Bulan, Medan
-            </p>
-        </section>
+<!-- KONTAK -->
+<section id="kontak">
+    <h3>Kontak Saya</h3>
+    <p>
+        No Handphone: 0824-3516-7768<br>
+        E-mail: desri.library@gmail.com<br>
+        Media Sosial: @desri.library
+    </p>
 
-        <!-- KONTAK -->
-        <section id="kontak">
-            <h3>Kontak</h3>
-            <p>
-                <strong>Kontak Saya:</strong><br>
-                No. Handphone: 0824-3516-7768<br>
-                E-mail: desri.library@gmail.com<br>
-                Media Sosial: @desri.library
-            </p>
+    <h3>Formulir Kontak</h3>
+    <form>
+        <label>Nama</label>
+        <input type="text" placeholder="Masukkan nama">
 
-            <h3>Formulir Kontak</h3>
-            <form>
-                <label>Nama:</label>
-                <input type="text" placeholder="Masukkan nama Anda">
+        <label>E-mail</label>
+        <input type="email" placeholder="Masukkan e-mail">
 
-                <label>E-mail:</label>
-                <input type="email" placeholder="Masukkan e-mail Anda">
+        <label>Pesan</label>
+        <textarea rows="4" placeholder="Tulis pesan"></textarea>
 
-                <label>Pesan:</label>
-                <textarea rows="4" placeholder="Tulis pesan Anda"></textarea>
+        <button type="submit">Kirim</button>
+    </form>
+</section>
 
-                <button type="submit">Kirim Pesan</button>
-            </form>
-        </section>
+<!-- TENTANG -->
+<section id="tentang">
+    <h3>Profil Perpustakaan</h3>
+    <p>(Akan dilengkapi)</p>
 
-        <!-- TENTANG -->
-        <section id="tentang">
-            <h3>Tentang Perpustakaan</h3>
+    <h3>Sejarah Perpustakaan</h3>
+    <p>
+        Desri Mini Library dibuat sebagai bagian dari proses pembelajaran
+        pengembangan web perpustakaan. Website ini menjadi media untuk
+        memahami konsep desain web, pengelolaan konten, serta penyajian
+        informasi perpustakaan dalam bentuk digital.
+    </p>
+</section>
 
-            <p><strong>Profil Perpustakaan</strong></p>
-            <p>
-                (Bagian ini akan dilengkapi dengan profil Desri Mini Library
-                secara lebih rinci.)
-            </p>
-
-            <p><strong>Sejarah Perpustakaan</strong></p>
-            <p>
-                Desri Mini Library dibuat sebagai bagian dari proses pembelajaran
-                untuk mempelajari dan mendalami pemahaman mengenai pengembangan
-                web perpustakaan. Website ini menjadi sarana latihan dalam
-                merancang, mengelola, dan menyajikan informasi perpustakaan
-                secara digital.
-            </p>
-        </section>
-
-    </div>
-</div>
+<!-- SCRIPT -->
+<script>
+function showSection(id) {
+    const sections = document.querySelectorAll("section");
+    sections.forEach(section => section.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+</script>
 
 </body>
 </html>
