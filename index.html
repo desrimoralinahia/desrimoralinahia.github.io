@@ -5,134 +5,133 @@
 <title>Desri Mini Library</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #0a0f1c;
-        color: white;
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a0f1c;
+    color: white;
+}
 
-    /* NAVBAR */
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #0b1c2d;
-        padding: 15px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-    }
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #0b1c2d;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
 
-    nav h2 {
-        margin: 0;
-        color: #4da6ff;
-    }
+nav h2 {
+    margin: 0;
+    color: #4da6ff;
+}
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
-    nav ul li {
-        margin-left: 20px;
-    }
+nav ul li {
+    margin-left: 20px;
+}
 
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        cursor: pointer;
-    }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    nav ul li a:hover {
-        color: #4da6ff;
-    }
+nav ul li a:hover {
+    color: #4da6ff;
+}
 
-    /* SECTION */
-    section {
-        display: none;
-        padding: 120px 50px 50px;
-        min-height: 100vh;
-    }
+/* SECTION */
+section {
+    display: none;
+    padding: 120px 50px 50px;
+    min-height: 100vh;
+}
 
-    section.active {
-        display: block;
-    }
+section.active {
+    display: block;
+}
 
-    /* HOME */
-    #home {
-        background: linear-gradient(
-            rgba(0,0,0,0.6),
-            rgba(0,0,0,0.6)
-        ),
-        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
-        background-size: cover;
-        background-position: center;
-        text-align: center;
-    }
+/* HOME BACKGROUND */
+#home {
+    background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+    ),
+    url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
 
-    #home h1 {
-        font-size: 55px;
-        color: #4da6ff;
-        margin-top: 100px;
-    }
+#home h1 {
+    font-size: 50px;
+    color: #4da6ff;
+}
 
-    #home p {
-        font-size: 20px;
-        max-width: 700px;
-        margin: auto;
-        color: #e0e6f0;
-    }
+#home p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+}
 
-    /* CONTENT */
-    h3 {
-        color: #4da6ff;
-        margin-bottom: 15px;
-    }
+/* CONTENT */
+h3 {
+    color: #4da6ff;
+}
 
-    a.link {
-        color: #4da6ff;
-        text-decoration: none;
-    }
+a.link {
+    color: #4da6ff;
+    text-decoration: none;
+}
 
-    a.link:hover {
-        text-decoration: underline;
-    }
+a.link:hover {
+    text-decoration: underline;
+}
 
-    /* FORM */
-    input, textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        margin-bottom: 15px;
-        border: none;
-        border-radius: 5px;
-    }
+/* FORM */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
 
-    button {
-        padding: 10px 20px;
-        background-color: #4da6ff;
-        border: none;
-        color: black;
-        font-weight: bold;
-        cursor: pointer;
-        border-radius: 5px;
-    }
+button {
+    padding: 10px 20px;
+    background-color: #4da6ff;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-    button:hover {
-        background-color: #3399ff;
-    }
+/* FOOTER */
+footer {
+    background-color: #0b1c2d;
+    text-align: center;
+    padding: 15px;
+    color: #cccccc;
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <h2>Desri Mini Library</h2>
     <ul>
@@ -144,14 +143,25 @@
     </ul>
 </nav>
 
-<!-- HOME -->
+<!-- BERANDA -->
 <section id="home" class="active">
     <h1>Selamat Datang di Desri Mini Library</h1>
     <p>
-        Desri Mini Library adalah perpustakaan personal berbasis web yang dibuat
-        sebagai sarana pembelajaran, pengembangan web perpustakaan, dan penyedia
-        informasi sederhana yang mudah diakses kapan saja.
+        Desri Mini Library merupakan perpustakaan personal berbasis web yang
+        dikembangkan sebagai sarana pembelajaran pengembangan web perpustakaan
+        dan penyedia informasi digital.
     </p>
+
+    <br><br>
+
+    <h3>Tutorial: Belajar Dasar GitHub</h3>
+
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/j52zgn_xfNg"
+        title="Belajar Dasar GitHub"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
 </section>
 
 <!-- KOLEKSI -->
@@ -159,22 +169,20 @@
     <h3>Koleksi E-Book</h3>
     <p>
         <strong>Kumpulan Dongeng Anak</strong><br>
-        E-book dongeng anak yang berisi cerita Putri Malu dan Cermin Ajaib
-        yang dapat dibaca secara daring melalui platform Scribd.<br><br>
-
-        <a class="link" href="https://www.scribd.com/document/330073016/Dongeng-Anak-Putri-Malu-Dan-Cermin-Ajaib" target="_blank">
-            Klik di sini untuk membaca e-book
+        <a class="link"
+        href="https://www.scribd.com/document/330073016/Dongeng-Anak-Putri-Malu-Dan-Cermin-Ajaib"
+        target="_blank">
+        Klik di sini untuk membaca e-book
         </a>
     </p>
 </section>
-
 
 <!-- LAYANAN -->
 <section id="layanan">
     <h3>Jam Operasional</h3>
     <p>
-        Senin – Kamis : 09.00 WIB – 16.00 WIB<br>
-        Jumat – Sabtu : 09.00 WIB – 15.00 WIB<br>
+        Senin – Kamis : 09.00 – 16.00 WIB<br>
+        Jumat – Sabtu : 09.00 – 15.00 WIB<br>
         Minggu : Tutup
     </p>
 
@@ -187,8 +195,18 @@
     <h3>Kontak Saya</h3>
     <p>
         No Handphone: 0824-3516-7768<br>
-        E-mail: desri.library@gmail.com<br>
-        Media Sosial: @desri.library
+        E-mail: desri.library@gmail.com<br><br>
+
+        <strong>Media Sosial:</strong><br>
+        Instagram:
+        <a class="link"
+        href="https://www.instagram.com/desri_hia?igsh=MXM2OGZibnpvZzBlag=="
+        target="_blank">@desri_hia</a><br>
+
+        Facebook:
+        <a class="link"
+        href="https://www.facebook.com/share/1GPpua2KP3/"
+        target="_blank">Desri Moralina</a>
     </p>
 
     <h3>Formulir Kontak</h3>
@@ -213,14 +231,16 @@
 
     <h3>Sejarah Perpustakaan</h3>
     <p>
-        Desri Mini Library dibuat sebagai bagian dari proses pembelajaran
-        pengembangan web perpustakaan. Website ini menjadi media untuk
-        memahami konsep desain web, pengelolaan konten, serta penyajian
-        informasi perpustakaan dalam bentuk digital.
+        Website ini dibuat sebagai bagian dari pembelajaran pengembangan
+        web perpustakaan untuk memahami desain, pengelolaan konten,
+        serta penyajian informasi digital secara terstruktur.
     </p>
 </section>
 
-<!-- SCRIPT -->
+<footer>
+    <p>&copy; 2026 Desri Mini Library. All Rights Reserved.</p>
+</footer>
+
 <script>
 function showSection(id) {
     const sections = document.querySelectorAll("section");
@@ -228,10 +248,6 @@ function showSection(id) {
     document.getElementById(id).classList.add("active");
 }
 </script>
-<footer>
-    <p>&copy; 2026 Desri Mini Library. All Rights Reserved.</p>
-</footer>
 
 </body>
 </html>
-
