@@ -6,25 +6,16 @@
     <style>
         body {
             font-family: Arial;
-            margin: 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            background-color: #2c3e50;
-            padding: 10px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-right: 15px;
         }
 
         .page {
             display: none;
             padding: 20px;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
         }
 
         .whatsapp {
@@ -38,100 +29,86 @@
         }
     </style>
 
-<script>
-    var isLoggedIn = false;
-    var savedUsername = "";
-    var savedPassword = "";
-
-    function showPage(pageId){
-
-        if(pageId !== "home" && pageId !== "login" && pageId !== "register" && !isLoggedIn){
-            alert("Silakan login terlebih dahulu!");
-            showPage("login");
-            return;
+    <script>
+        function showPage(pageId) {
+            var pages = document.getElementsByClassName("page");
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = "none";
+            }
+            document.getElementById(pageId).style.display = "block";
         }
-
-        var pages = document.getElementsByClassName("page");
-        for(var i=0; i<pages.length; i++){
-            pages[i].style.display = "none";
-        }
-
-        document.getElementById(pageId).style.display = "block";
-    }
-
-    function registerUser(){
-
-        var first = document.getElementById("regFirst").value;
-        var last = document.getElementById("regLast").value;
-        var email = document.getElementById("regEmail").value;
-        var phone = document.getElementById("regPhone").value;
-        var pass = document.getElementById("regPass").value;
-
-        if(first=="" || last=="" || email=="" || phone=="" || pass==""){
-            alert("Semua data harus diisi!");
-            return false;
-        }
-
-        savedUsername = first + last;
-        savedPassword = pass;
-
-        alert("Pendaftaran berhasil!\nUsername kamu: " + savedUsername);
-
-        showPage("login");
-        return false;
-    }
-
-    function loginUser(){
-
-        var user = document.getElementById("loginUser").value;
-        var pass = document.getElementById("loginPass").value;
-
-        if(user==savedUsername && pass==savedPassword){
-            isLoggedIn = true;
-            alert("Login berhasil!");
-            document.getElementById("loginBtn").innerHTML = "Logout";
-            document.getElementById("loginBtn").onclick = logoutUser;
-            showPage("home");
-        }else{
-            alert("Username atau Password salah!");
-        }
-
-        return false;
-    }
-
-    function logoutUser(){
-        isLoggedIn = false;
-        alert("Anda logout");
-
-        document.getElementById("loginBtn").innerHTML = "Login";
-        document.getElementById("loginBtn").onclick = function(){ showPage('login'); };
-
-        showPage("home");
-    }
-
-</script>
+    </script>
 
 </head>
 
-<body onload="showPage('home')">
+<body onload="showPage('login')">
 
-<!-- ===== NAVBAR ===== -->
-<nav>
-    <div>
+<!-- ================= LOGIN ================= -->
+<div id="login" class="page">
+    <h2>Login Perpustakaan Desri</h2>
+
+    <form onsubmit="showPage('home'); return false;">
+        Last Name:<br>
+        <input type="text"><br><br>
+
+        First Name:<br>
+        <input type="text"><br><br>
+
+        Email:<br>
+        <input type="email"><br><br>
+
+        Password:<br>
+        <input type="password"><br><br>
+
+        No Handphone:<br>
+        <input type="text"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <p>Belum punya akun? 
+        <a href="#" onclick="showPage('register')">Daftar di sini</a>
+    </p>
+</div>
+
+<!-- ================= REGISTER ================= -->
+<div id="register" class="page">
+    <h2>Daftar Akun Baru</h2>
+
+    <form onsubmit="showPage('login'); return false;">
+        Last Name:<br>
+        <input type="text"><br><br>
+
+        First Name:<br>
+        <input type="text"><br><br>
+
+        Email:<br>
+        <input type="email"><br><br>
+
+        No Handphone:<br>
+        <input type="text"><br><br>
+
+        Password:<br>
+        <input type="password"><br><br>
+
+        <input type="submit" value="Daftar">
+    </form>
+</div>
+
+<!-- ================= HOME ================= -->
+<div id="home" class="page">
+
+    <nav>
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('collection')">Collection</a>
         <a href="#" onclick="showPage('service')">Service</a>
         <a href="#" onclick="showPage('about')">About Us</a>
         <a href="#" onclick="showPage('contact')">Contact Us</a>
-    </div>
+    </nav>
 
-    <div>
-        <a href="#" id="loginBtn" onclick="showPage('login')">Login</a>
-    </div>
-</nav>
+    <hr>
 
-<!-- ================= HOME ================= -->
-<div id="home" class="page">
+    <!-- CODING AWAL KAMU (TIDAK DIUBAH ISINYA) -->
     <h1>Selamat Datang Di Halaman Web Saya</h1>
     <h2>Sebelum itu izinkan saya perkenalan terlebih dahulu</h2>
     <p>Nama : Desri Moralina Hia</p>
@@ -147,51 +124,18 @@
     </iframe>
 </div>
 
-<!-- ================= LOGIN ================= -->
-<div id="login" class="page">
-    <h2>Login</h2>
-
-    <form onsubmit="return loginUser()">
-        Username (FirstNameLastName):<br>
-        <input type="text" id="loginUser"><br><br>
-
-        Password:<br>
-        <input type="password" id="loginPass"><br><br>
-
-        <input type="submit" value="Login">
-    </form>
-
-    <p>Belum punya akun? 
-        <a href="#" onclick="showPage('register')">Daftar dulu</a>
-    </p>
-</div>
-
-<!-- ================= REGISTER ================= -->
-<div id="register" class="page">
-    <h2>Daftar Akun</h2>
-
-    <form onsubmit="return registerUser()">
-        First Name:<br>
-        <input type="text" id="regFirst"><br><br>
-
-        Last Name:<br>
-        <input type="text" id="regLast"><br><br>
-
-        Email:<br>
-        <input type="email" id="regEmail"><br><br>
-
-        No Handphone:<br>
-        <input type="text" id="regPhone"><br><br>
-
-        Password:<br>
-        <input type="password" id="regPass"><br><br>
-
-        <input type="submit" value="Daftar">
-    </form>
-</div>
-
 <!-- ================= COLLECTION ================= -->
 <div id="collection" class="page">
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('collection')">Collection</a>
+        <a href="#" onclick="showPage('service')">Service</a>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('contact')">Contact Us</a>
+    </nav>
+
+    <hr>
+
     <h2>Collection</h2>
     <ul>
         <li>Buku Teknologi Informasi</li>
@@ -203,6 +147,16 @@
 
 <!-- ================= SERVICE ================= -->
 <div id="service" class="page">
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('collection')">Collection</a>
+        <a href="#" onclick="showPage('service')">Service</a>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('contact')">Contact Us</a>
+    </nav>
+
+    <hr>
+
     <h2>Informasi Layanan</h2>
     <ul>
         <li>Senin - Jumat : 08.00 - 16.00</li>
@@ -213,16 +167,40 @@
 
 <!-- ================= ABOUT ================= -->
 <div id="about" class="page">
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('collection')">Collection</a>
+        <a href="#" onclick="showPage('service')">Service</a>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('contact')">Contact Us</a>
+    </nav>
+
+    <hr>
+
     <h2>Tentang Perpustakaan Desri</h2>
     <p>Perpustakaan Desri didirikan untuk mendukung kebutuhan informasi mahasiswa dan masyarakat.</p>
+    <p>Berdiri sejak tahun 2026 dengan tujuan meningkatkan literasi dan akses informasi.</p>
 </div>
 
 <!-- ================= CONTACT ================= -->
 <div id="contact" class="page">
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('collection')">Collection</a>
+        <a href="#" onclick="showPage('service')">Service</a>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('contact')">Contact Us</a>
+    </nav>
+
+    <hr>
+
     <h2>Contact Us</h2>
 
     <p>Email: desmor830@gmail.com</p>
     <p>WhatsApp: 0813-6075-8627</p>
+
+    <p><a href="https://www.instagram.com/desri_hia">Instagram</a></p>
+    <p><a href="https://www.facebook.com/share/1GPpua2KP3/">Facebook</a></p>
 
     <h3>Formulir Pesan</h3>
     <form>
@@ -239,7 +217,7 @@
     </form>
 </div>
 
-<!-- WHATSAPP -->
+<!-- ================= WHATSAPP FLOAT ================= -->
 <div class="whatsapp">
     <a href="https://wa.me/6281360758627" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png">
