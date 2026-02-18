@@ -22,10 +22,6 @@
             margin-right: 15px;
         }
 
-        .menu-left a {
-            margin-right: 15px;
-        }
-
         .page {
             display: none;
             padding: 20px;
@@ -42,55 +38,78 @@
         }
     </style>
 
-    <script>
-        var isLoggedIn = false;
+<script>
+    var isLoggedIn = false;
+    var savedUsername = "";
+    var savedPassword = "";
 
-        function showPage(pageId) {
+    function showPage(pageId){
 
-            if(pageId !== "home" && pageId !== "login" && !isLoggedIn){
-                alert("Silakan login terlebih dahulu!");
-                showPage("login");
-                return;
-            }
-
-            var pages = document.getElementsByClassName("page");
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = "none";
-            }
-
-            document.getElementById(pageId).style.display = "block";
+        if(pageId !== "home" && pageId !== "login" && pageId !== "register" && !isLoggedIn){
+            alert("Silakan login terlebih dahulu!");
+            showPage("login");
+            return;
         }
 
-        function loginUser() {
+        var pages = document.getElementsByClassName("page");
+        for(var i=0; i<pages.length; i++){
+            pages[i].style.display = "none";
+        }
 
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
+        document.getElementById(pageId).style.display = "block";
+    }
 
-            if(email === "" || password === ""){
-                alert("Email dan Password wajib diisi!");
-                return false;
-            }
+    function registerUser(){
 
-            isLoggedIn = true;
-            alert("Login berhasil!");
+        var first = document.getElementById("regFirst").value;
+        var last = document.getElementById("regLast").value;
+        var email = document.getElementById("regEmail").value;
+        var phone = document.getElementById("regPhone").value;
+        var pass = document.getElementById("regPass").value;
 
-            document.getElementById("loginBtn").innerHTML = "Logout";
-            document.getElementById("loginBtn").onclick = logoutUser;
-
-            showPage("home");
+        if(first=="" || last=="" || email=="" || phone=="" || pass==""){
+            alert("Semua data harus diisi!");
             return false;
         }
 
-        function logoutUser(){
-            isLoggedIn = false;
-            alert("Anda berhasil logout");
+        savedUsername = first + last;
+        savedPassword = pass;
 
-            document.getElementById("loginBtn").innerHTML = "Login";
-            document.getElementById("loginBtn").onclick = function(){ showPage('login'); };
+        alert("Pendaftaran berhasil!\nUsername kamu: " + savedUsername);
 
+        showPage("login");
+        return false;
+    }
+
+    function loginUser(){
+
+        var user = document.getElementById("loginUser").value;
+        var pass = document.getElementById("loginPass").value;
+
+        if(user==savedUsername && pass==savedPassword){
+            isLoggedIn = true;
+            alert("Login berhasil!");
+            document.getElementById("loginBtn").innerHTML = "Logout";
+            document.getElementById("loginBtn").onclick = logoutUser;
             showPage("home");
+        }else{
+            alert("Username atau Password salah!");
         }
-    </script>
+
+        return false;
+    }
+
+    function logoutUser(){
+        isLoggedIn = false;
+        alert("Anda logout");
+
+        document.getElementById("loginBtn").innerHTML = "Login";
+        document.getElementById("loginBtn").onclick = function(){ showPage('login'); };
+
+        showPage("home");
+    }
+
+</script>
 
 </head>
 
@@ -98,7 +117,7 @@
 
 <!-- ===== NAVBAR ===== -->
 <nav>
-    <div class="menu-left">
+    <div>
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('collection')">Collection</a>
         <a href="#" onclick="showPage('service')">Service</a>
@@ -113,8 +132,6 @@
 
 <!-- ================= HOME ================= -->
 <div id="home" class="page">
-
-    <!-- CODING AWAL KAMU (TIDAK DIUBAH ISINYA) -->
     <h1>Selamat Datang Di Halaman Web Saya</h1>
     <h2>Sebelum itu izinkan saya perkenalan terlebih dahulu</h2>
     <p>Nama : Desri Moralina Hia</p>
@@ -132,16 +149,44 @@
 
 <!-- ================= LOGIN ================= -->
 <div id="login" class="page">
-    <h2>Login Perpustakaan Desri</h2>
+    <h2>Login</h2>
 
     <form onsubmit="return loginUser()">
-        Email:<br>
-        <input type="email" id="email"><br><br>
+        Username (FirstNameLastName):<br>
+        <input type="text" id="loginUser"><br><br>
 
         Password:<br>
-        <input type="password" id="password"><br><br>
+        <input type="password" id="loginPass"><br><br>
 
         <input type="submit" value="Login">
+    </form>
+
+    <p>Belum punya akun? 
+        <a href="#" onclick="showPage('register')">Daftar dulu</a>
+    </p>
+</div>
+
+<!-- ================= REGISTER ================= -->
+<div id="register" class="page">
+    <h2>Daftar Akun</h2>
+
+    <form onsubmit="return registerUser()">
+        First Name:<br>
+        <input type="text" id="regFirst"><br><br>
+
+        Last Name:<br>
+        <input type="text" id="regLast"><br><br>
+
+        Email:<br>
+        <input type="email" id="regEmail"><br><br>
+
+        No Handphone:<br>
+        <input type="text" id="regPhone"><br><br>
+
+        Password:<br>
+        <input type="password" id="regPass"><br><br>
+
+        <input type="submit" value="Daftar">
     </form>
 </div>
 
@@ -170,7 +215,6 @@
 <div id="about" class="page">
     <h2>Tentang Perpustakaan Desri</h2>
     <p>Perpustakaan Desri didirikan untuk mendukung kebutuhan informasi mahasiswa dan masyarakat.</p>
-    <p>Berdiri sejak tahun 2026 dengan tujuan meningkatkan literasi dan akses informasi.</p>
 </div>
 
 <!-- ================= CONTACT ================= -->
@@ -179,9 +223,6 @@
 
     <p>Email: desmor830@gmail.com</p>
     <p>WhatsApp: 0813-6075-8627</p>
-
-    <p><a href="https://www.instagram.com/desri_hia">Instagram</a></p>
-    <p><a href="https://www.facebook.com/share/1GPpua2KP3/">Facebook</a></p>
 
     <h3>Formulir Pesan</h3>
     <form>
@@ -198,7 +239,7 @@
     </form>
 </div>
 
-<!-- ================= WHATSAPP FLOAT ================= -->
+<!-- WHATSAPP -->
 <div class="whatsapp">
     <a href="https://wa.me/6281360758627" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png">
