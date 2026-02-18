@@ -6,6 +6,7 @@
     <style>
         body {
             font-family: Arial;
+            margin: 0;
         }
 
         nav {
@@ -46,7 +47,7 @@
 
         function showPage(pageId) {
 
-            if(pageId !== "home" && !isLoggedIn){
+            if(pageId !== "home" && pageId !== "login" && !isLoggedIn){
                 alert("Silakan login terlebih dahulu!");
                 showPage("login");
                 return;
@@ -61,10 +62,33 @@
         }
 
         function loginUser() {
+
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if(email === "" || password === ""){
+                alert("Email dan Password wajib diisi!");
+                return false;
+            }
+
             isLoggedIn = true;
             alert("Login berhasil!");
+
+            document.getElementById("loginBtn").innerHTML = "Logout";
+            document.getElementById("loginBtn").onclick = logoutUser;
+
             showPage("home");
             return false;
+        }
+
+        function logoutUser(){
+            isLoggedIn = false;
+            alert("Anda berhasil logout");
+
+            document.getElementById("loginBtn").innerHTML = "Login";
+            document.getElementById("loginBtn").onclick = function(){ showPage('login'); };
+
+            showPage("home");
         }
     </script>
 
@@ -83,14 +107,14 @@
     </div>
 
     <div>
-        <a href="#" onclick="showPage('login')">Login</a>
+        <a href="#" id="loginBtn" onclick="showPage('login')">Login</a>
     </div>
 </nav>
 
 <!-- ================= HOME ================= -->
 <div id="home" class="page">
 
-    <!-- CODING AWAL KAMU (TIDAK DIUBAH) -->
+    <!-- CODING AWAL KAMU (TIDAK DIUBAH ISINYA) -->
     <h1>Selamat Datang Di Halaman Web Saya</h1>
     <h2>Sebelum itu izinkan saya perkenalan terlebih dahulu</h2>
     <p>Nama : Desri Moralina Hia</p>
@@ -112,10 +136,10 @@
 
     <form onsubmit="return loginUser()">
         Email:<br>
-        <input type="email" required><br><br>
+        <input type="email" id="email"><br><br>
 
         Password:<br>
-        <input type="password" required><br><br>
+        <input type="password" id="password"><br><br>
 
         <input type="submit" value="Login">
     </form>
@@ -134,4 +158,52 @@
 
 <!-- ================= SERVICE ================= -->
 <div id="service" class="page">
-    <h2>Informasi Layanan</
+    <h2>Informasi Layanan</h2>
+    <ul>
+        <li>Senin - Jumat : 08.00 - 16.00</li>
+        <li>Sabtu : 09.00 - 14.00</li>
+        <li>Minggu : Tutup</li>
+    </ul>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div id="about" class="page">
+    <h2>Tentang Perpustakaan Desri</h2>
+    <p>Perpustakaan Desri didirikan untuk mendukung kebutuhan informasi mahasiswa dan masyarakat.</p>
+    <p>Berdiri sejak tahun 2026 dengan tujuan meningkatkan literasi dan akses informasi.</p>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div id="contact" class="page">
+    <h2>Contact Us</h2>
+
+    <p>Email: desmor830@gmail.com</p>
+    <p>WhatsApp: 0813-6075-8627</p>
+
+    <p><a href="https://www.instagram.com/desri_hia">Instagram</a></p>
+    <p><a href="https://www.facebook.com/share/1GPpua2KP3/">Facebook</a></p>
+
+    <h3>Formulir Pesan</h3>
+    <form>
+        Nama:<br>
+        <input type="text"><br><br>
+
+        Email:<br>
+        <input type="email"><br><br>
+
+        Pesan:<br>
+        <textarea rows="4" cols="30"></textarea><br><br>
+
+        <input type="submit" value="Kirim">
+    </form>
+</div>
+
+<!-- ================= WHATSAPP FLOAT ================= -->
+<div class="whatsapp">
+    <a href="https://wa.me/6281360758627" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png">
+    </a>
+</div>
+
+</body>
+</html>
