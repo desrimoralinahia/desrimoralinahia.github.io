@@ -2,24 +2,25 @@
 <html>
 <head>
     <title>Perpustakaan Desri</title>
-<link rel="stylesheet" href="style.css">
-    <script>
-        function showPage(pageId) {
-            var pages = document.getElementsByClassName("page");
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = "none";
-            }
-            document.getElementById(pageId).style.display = "block";
-        }
+    <link rel="stylesheet" href="style.css">
 
-        function logout() {
-            var forms = document.getElementsByTagName("form");
-            for (var i = 0; i < forms.length; i++) {
-                forms[i].reset();
-            }
-            showPage('login');
-        }
-    </script>
+<script>
+function showPage(pageId) {
+    var pages = document.getElementsByClassName("page");
+    for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = "none";
+    }
+    document.getElementById(pageId).style.display = "block";
+}
+
+function logout() {
+    var forms = document.getElementsByTagName("form");
+    for (var i = 0; i < forms.length; i++) {
+        forms[i].reset();
+    }
+    showPage('login');
+}
+</script>
 
 </head>
 
@@ -83,22 +84,18 @@
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('collection')">Collection</a>
         <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('profil')">Profil</a>
         <a href="#" onclick="showPage('contact')">Contact Us</a>
+        <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
 
     <hr>
 
-    <!-- CODING AWAL KAMU (TIDAK DIUBAH) -->
-    <h1>Welcome to Nias Heritage Library</h1>
+    <h1>Selamat Datang Di Halaman Web Saya</h1>
     <h2>Sebelum itu izinkan saya perkenalan terlebih dahulu</h2>
     <p>Nama : Desri Moralina Hia</p>
     <p>NIM  : 230709012 </p>
-
-    <p><a href="https://www.instagram.com/desri_hia">Instagram Saya</a></p>
-    <p><a href="https://www.facebook.com/share/1GPpua2KP3/">Facebook Saya</a></p>
-    <p><a href="https://drive.google.com/file/d/1wZL1pqHDX50uAKH0aYgl5e1xYB8LVlVf/view?usp=drivesdk">Curriculum Vitae</a></p>
 
     <h3>Video Cara Mengisi KRS</h3>
     <iframe width="560" height="315"
@@ -112,8 +109,9 @@
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('collection')">Collection</a>
         <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('profil')">Profil</a>
         <a href="#" onclick="showPage('contact')">Contact Us</a>
+        <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
 
@@ -123,16 +121,23 @@
     <ul>
         <li>Asal Usul Orang Nias</li>
         <p><a href="https://drive.google.com/file/d/1wi7LzKZ824M8pnYInvFmp3dVAtSkxHjF/view?usp=drive_link">Buka</a></p>
+
         <li>Adat dan Budaya Suku Nias</li>
         <p><a href="https://drive.google.com/file/d/1UXI4418mhWZkSAnyKd0mccH3XR2uC7tA/view?usp=drive_link">Buka</a></p>
+
         <li>Museum Pusaka Nias</li>
         <p><a href="https://museum-nias.org/">Buka</a></p>
+
         <li>Cerita Rakyat Nias</li>
         <p><a href="https://www.scribd.com/document/750395009/Legenda-Laowomaru">Buka</a></p>
+
         <li>Jurnal Penelitian</li>
         <p><a href="https://drive.google.com/file/d/14dmCk0IRwWuSxMkAgUswqb1CwMhcJyEf/view?usp=sharing">Buka</a></p>
+
         <li>Dokumentasi</li>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/6mIdhdBSbbo?si=9N1yf1Js-CPcZIr9"
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/6mIdhdBSbbo?si=9N1yf1Js-CPcZIr9">
+        </iframe>
     </ul>
 </div>
 
@@ -142,8 +147,9 @@
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('collection')">Collection</a>
         <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('profil')">Profil</a>
         <a href="#" onclick="showPage('contact')">Contact Us</a>
+        <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
 
@@ -157,22 +163,22 @@
     </ul>
 </div>
 
-<!-- ================= ABOUT ================= -->
-<div id="about" class="page">
+<!-- ================= PROFIL ================= -->
+<div id="profil" class="page">
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('collection')">Collection</a>
         <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('profil')">Profil</a>
         <a href="#" onclick="showPage('contact')">Contact Us</a>
+        <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
 
     <hr>
 
-    <h2>Tentang Perpustakaan Desri</h2>
-    <p>Perpustakaan Desri didirikan untuk mendukung kebutuhan informasi mahasiswa dan masyarakat.</p>
-    <p>Berdiri sejak tahun 2026 dengan tujuan meningkatkan literasi dan akses informasi.</p>
+    <h2>About Libraries</h2>
+    <p>Nias Heritage Library berdiri sejak tahun 2026 ...</p>
 </div>
 
 <!-- ================= CONTACT ================= -->
@@ -181,37 +187,36 @@
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('collection')">Collection</a>
         <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('profil')">Profil</a>
         <a href="#" onclick="showPage('contact')">Contact Us</a>
+        <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
 
     <hr>
 
     <h2>Contact Us</h2>
-
     <p>Email: desmor830@gmail.com</p>
- <p><a href="https://wa.me/6285362867026">WhatsApp</a></p>
-
-    <p><a href="https://www.instagram.com/desri_hia">Instagram</a></p>
-    <p><a href="https://www.facebook.com/share/1GPpua2KP3/">Facebook</a></p>
-
-    <h3>Formulir Pesan</h3>
-    <form>
-        Nama:<br>
-        <input type="text"><br><br>
-
-        Email:<br>
-        <input type="email"><br><br>
-
-        Pesan:<br>
-        <textarea rows="4" cols="30"></textarea><br><br>
-
-        <input type="submit" value="Kirim">
-    </form>
+    <p>WhatsApp: 0813-6075-8627</p>
 </div>
 
-<!-- ================= WHATSAPP FLOAT ================= -->
+<!-- ================= ADMIN ================= -->
+<div id="admin" class="page">
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('collection')">Collection</button>
+        <button onclick="showPage('service')">Service</button>
+        <button onclick="showPage('profil')">Profile</button>
+        <button onclick="showPage('contact')">Contact Us</button>
+        <button onclick="showPage('admin')">Admin</button>
+        <button onclick="logout()">Logout</button>
+    </nav>
+
+    <hr>
+
+    <h2>Admin</h2>
+</div>
+
 <div class="whatsapp">
     <a href="https://wa.me/6281360758627" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png">
