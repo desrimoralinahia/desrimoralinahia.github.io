@@ -53,8 +53,8 @@ nav {
 }
 
 nav a {
-    background-color: #e0e0e0;
-    color: black;
+    background-color: #FF0000;
+    color: red;
     padding: 8px 15px;
     margin: 5px;
     text-decoration: none;
