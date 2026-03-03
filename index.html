@@ -3,37 +3,26 @@
 <head>
     <title>Perpustakaan Desri</title>
     <link rel="stylesheet" href="style.css">
-
 <script>
 function showPage(pageId) {
     var pages = document.getElementsByClassName("page");
     for (var i = 0; i < pages.length; i++) {
-        pages[i].style.display = "none";
-    }
-    document.getElementById(pageId).style.display = "block";
-}
-
+        pages[i].style.display = "none";}
+    document.getElementById(pageId).style.display = "block";}
 function logout() {
     var forms = document.getElementsByTagName("form");
     for (var i = 0; i < forms.length; i++) {
-        forms[i].reset();
-    }
-    showPage('login');
-}
+        forms[i].reset();}
+    showPage('login');}
 </script>
-
 </head>
-
 <body onload="showPage('login')">
-
-<!-- ================= LOGIN ================= -->
 <div id="login" class="page">
     <h2>Login Perpustakaan Desri</h2>
-
     <form onsubmit="showPage('home'); return false;">
         Last Name:<br>
         <input type="text"><br><br>
-
+        
         First Name:<br>
         <input type="text"><br><br>
 
@@ -48,16 +37,11 @@ function logout() {
 
         <input type="submit" value="Login">
     </form>
-
     <p>Belum punya akun? 
-        <a href="#" onclick="showPage('register')">Daftar di sini</a>
-    </p>
+        <a href="#" onclick="showPage('register')">Daftar di sini</a></p>
 </div>
-
-<!-- ================= REGISTER ================= -->
 <div id="register" class="page">
     <h2>Daftar Akun Baru</h2>
-
     <form onsubmit="showPage('login'); return false;">
         Last Name:<br>
         <input type="text"><br><br>
@@ -77,8 +61,6 @@ function logout() {
         <input type="submit" value="Daftar">
     </form>
 </div>
-
-<!-- ================= HOME ================= -->
 <div id="home" class="page">
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -89,14 +71,10 @@ function logout() {
         <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
-
     <hr>
-
     <h1>Welcome to Nias Heritage Library</h1>
     <p>Selamat datang di Nias Heritage Library, ruang literasi digital yang menghadirkan kekayaan sejarah, budaya, dan pesona Nias dalam satu platform yang mudah diakses. Di sini, Anda dapat menjelajahi berbagai koleksi bacaan, dokumentasi, serta informasi terpercaya yang dirancang untuk memperluas wawasan, mendukung kegiatan belajar dan penelitian, serta menumbuhkan kecintaan terhadap warisan daerah Nias bagi generasi sekarang dan masa depan.</p>
 </div>
-
-<!-- ================= COLLECTION ================= -->
 <div id="collection" class="page">
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -107,26 +85,19 @@ function logout() {
         <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
-
     <hr>
-
     <h2>Collection</h2>
     <ul>
         <li>Asal Usul Orang Nias</li>
         <p><a href="https://drive.google.com/file/d/1wi7LzKZ824M8pnYInvFmp3dVAtSkxHjF/view?usp=drive_link">Buka</a></p>
-
         <li>Adat dan Budaya Suku Nias</li>
         <p><a href="https://drive.google.com/file/d/1UXI4418mhWZkSAnyKd0mccH3XR2uC7tA/view?usp=drive_link">Buka</a></p>
-
         <li>Museum Pusaka Nias</li>
         <p><a href="https://museum-nias.org/">Buka</a></p>
-
         <li>Cerita Rakyat Nias</li>
         <p><a href="https://www.scribd.com/document/750395009/Legenda-Laowomaru">Buka</a></p>
-
         <li>Jurnal Penelitian</li>
         <p><a href="https://drive.google.com/file/d/14dmCk0IRwWuSxMkAgUswqb1CwMhcJyEf/view?usp=sharing">Buka</a></p>
-
         <li>Dokumentasi</li>
         <iframe width="560" height="315"
             src="https://www.youtube.com/embed/6mIdhdBSbbo?si=9N1yf1Js-CPcZIr9">
@@ -135,8 +106,6 @@ function logout() {
         </iframe>
     </ul>
 </div>
-
-<!-- ================= SERVICE ================= -->
 <div id="service" class="page">
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -147,9 +116,7 @@ function logout() {
         <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
-
     <hr>
-
     <h2>Opening Time</h2>
     <ul>
         <li>Senin - Jumat : 08.00 - 16.00</li>
@@ -157,8 +124,6 @@ function logout() {
         <li>Minggu        : Tutup</li>
     </ul>
 </div>
-
-<!-- ================= PROFIL ================= -->
 <div id="profil" class="page">
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -169,14 +134,10 @@ function logout() {
         <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
-
     <hr>
-
     <h2>About Libraries</h2>
     <p>Nias Heritage Library berdiri sejak tahun 2026 yang merupakan perpustakaan umum berbasis digital berfungsi sebagai pusat informasi tentang sejarah, budaya, wisata NIAS. Perpustakaan ini dapat diakses oleh semua kalangan dari pelajar, mahasiswa, peneliti hingga wisatawan yang ingin mengenal Nias lebih dalam. Melalui pemanfaatan teknologi digital, NHL bertujuan untuk melestarikan warisan budaya Nias sekaligus menjadi sumber referensi yang mudah diakses, edukatif, dan bermanfaat bagi generasi sekarang maupun yang akan datang.</p>
 </div>
-
-<!-- ================= CONTACT ================= -->
 <div id="contact" class="page">
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -187,17 +148,12 @@ function logout() {
         <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
-
     <hr>
-
      <h2>Contact Us</h2>
-
     <p>Email: desmor830@gmail.com</p>
     <p>WhatsApp: 0813-6075-8627</p>
-
     <p><a href="https://www.instagram.com/desri_hia">Instagram</a></p>
     <p><a href="https://www.facebook.com/share/1GPpua2KP3/">Facebook</a></p>
-
     <h3>Formulir Pesan</h3>
     <form>
         Nama:<br>
@@ -212,7 +168,6 @@ function logout() {
         <input type="submit" value="Kirim">
     </form>
 </div>    
-<!-- ================= ADMIN ================= -->
 <div id="admin" class="page">
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -223,40 +178,28 @@ function logout() {
         <a href="#" onclick="showPage('admin')">Admin</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
-
     <hr>
-
     <h2>Admin</h2>
     <p>
         <a href="https://wa.me/6281360758627" target="_blank" rel="noopener noreferrer">
-            WhatsApp Admin
-        </a>
-    </p>
+            WhatsApp Admin</a> </p>
 
-    <p>
-        <a href="https://www.instagram.com/desri_hia" target="_blank" rel="noopener noreferrer">
-            Instagram
-        </a>
-    </p>
+    <p> <a href="https://www.instagram.com/desri_hia" target="_blank" rel="noopener noreferrer">
+            Instagram </a></p>
 
-    <p>
-        <a href="https://www.facebook.com/share/1GPpua2KP3/" target="_blank" rel="noopener noreferrer">
-            Facebook
-        </a>
-    </p>
-
+    <p><a href="https://www.facebook.com/share/1GPpua2KP3/" target="_blank" rel="noopener noreferrer">
+            Facebook</a></p>
+    
     <p><a href="https://drive.google.com/file/d/1wZL1pqHDX50uAKH0aYgl5e1xYB8LVlVf/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
             Curriculum Vitae</a></p>
      <h3>Video Cara Mengisi KRS</h3>
     <iframe width="560" height="315"
         src="https://www.youtube.com/embed/Y_ZVTk2kesM">
     </iframe>
-</div>
-    
+</div> 
 <div class="whatsapp">
     <a href="https://wa.me/6281360758627" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png">
-    </a>
+        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png"></a>
 </div>
 
 </body>
