@@ -1,9 +1,126 @@
-body {
+/* Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fbatakita.com%2F2023%2F09%2F09%2Fkesenian-suku-nias-keindahan-yang-mempesona-dari-pulau-karang%2F&psig=AOvVaw2-TiXOulgCyHSWgDm045Ng&ust=1772556294471000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPD19cjVgZMDFQAAAAAdAAAAABAR");
-
+/* Background */
+body {
+    background-image: url("background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+/* Overlay supaya teks jelas */
+.page {
+    display: none;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 1000px;
+    background: rgba(255, 248, 220, 0.95);
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+}
+
+/* Judul */
+h1 {
+    text-align: center;
+    color: #8b0000;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #8b0000;
+    border-bottom: 3px solid #8b0000;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #8b0000;
+    margin-top: 15px;
+}
+
+/* Navbar */
+nav {
+    background: rgba(139,0,0,0.9);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* Text */
+p, ul {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+/* Form */
+input, textarea {
+    padding: 10px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+input[type=submit] {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: black;
+}
+
+/* Login & Register khusus */
+#login, #register {
+    max-width: 400px;
+    margin-top: 120px;
+}
+
+/* Image koleksi */
+img {
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+}
+
+/* Video */
+iframe {
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+}
+
+/* WhatsApp Floating */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp img {
+    width: 60px;
 }
