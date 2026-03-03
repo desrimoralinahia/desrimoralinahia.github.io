@@ -124,15 +124,3 @@ iframe {
 .whatsapp img {
     width: 60px;
 }
-/* KHUSUS BAGIAN ADMIN */
-#admin a {
-    display: block;
-    margin: 10px 0;
-    font-size: 18px;
-    text-decoration: none;
-    color: #5a0080;
-}
-
-#admin a:hover {
-    color: red;
-}
