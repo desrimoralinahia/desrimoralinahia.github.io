@@ -114,26 +114,42 @@ Seminar ini bertujuan untuk meningkatkan pemahaman masyarakat mengenai pentingny
 </a>
 </p>
     
-    <h2>Kalkulator Sederhana</h2>
-<p>Angka 1:</p>
-<input type="number" id="angka1">
+   <h2>Kalkulator Sederhana</h2>
 
-<p>Pilih Operasi:</p>
-<select id="operator">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">×</option>
-    <option value="/">÷</option>
-</select>
+<table border="1" cellpadding="10">
+    <tr>
+        <td>Angka 1</td>
+        <td><input type="number" id="angka1"></td>
+    </tr>
 
-<p>Angka 2:</p>
-<input type="number" id="angka2">
+    <tr>
+        <td>Operasi</td>
+        <td>
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+            </select>
+        </td>
+    </tr>
 
-<br><br>
+    <tr>
+        <td>Angka 2</td>
+        <td><input type="number" id="angka2"></td>
+    </tr>
 
-<button onclick="hitungKalkulator()">Hitung</button>
+    <tr>
+        <td colspan="2" align="center">
+            <button onclick="hitungKalkulator()">Hitung</button>
+        </td>
+    </tr>
 
-<p id="hasil"></p>
+    <tr>
+        <td>Hasil</td>
+        <td id="hasil"></td>
+    </tr>
+</table>
     </div>
 <!-- ================= COLLECTION ================= -->
 <div id="collection" class="page">
