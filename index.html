@@ -14,6 +14,24 @@ function logout() {
     for (var i = 0; i < forms.length; i++) {
         forms[i].reset();}
     showPage('login');}
+    
+    function hitungKalkulator() {
+    var angka1 = document.getElementById("angka1").value;
+    var angka2 = document.getElementById("angka2").value;
+    var operator = document.getElementById("operator").value;
+
+    var hasil;
+
+    if (operator == "+") {
+        hasil = Number(angka1) + Number(angka2);
+    } else if (operator == "-") {
+        hasil = angka1 - angka2;
+    } else if (operator == "*") {
+        hasil = angka1 * angka2;
+    } else if (operator == "/") {
+        hasil = angka1 / angka2;}
+
+    document.getElementById("hasil").innerHTML = "Hasil: " + hasil;}
 </script>
 </head>
 <body onload="showPage('login')">
@@ -95,6 +113,27 @@ Seminar ini bertujuan untuk meningkatkan pemahaman masyarakat mengenai pentingny
     Daftar Disini
 </a>
 </p>
+    
+    <h2>Kalkulator Sederhana</h2>
+<p>Angka 1:</p>
+<input type="number" id="angka1">
+
+<p>Pilih Operasi:</p>
+<select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">×</option>
+    <option value="/">÷</option>
+</select>
+
+<p>Angka 2:</p>
+<input type="number" id="angka2">
+
+<br><br>
+
+<button onclick="hitungKalkulator()">Hitung</button>
+
+<p id="hasil"></p>
     </div>
 <!-- ================= COLLECTION ================= -->
 <div id="collection" class="page">
