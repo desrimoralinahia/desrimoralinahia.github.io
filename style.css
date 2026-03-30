@@ -6,19 +6,19 @@
     font-family: Arial, sans-serif;
 }
 
-/* Background */
+/* Background Utama */
 body {
     background-image: url("background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding-top: 70px; /* Ruang agar konten tidak tertutup navbar */
+    padding-top: 80px; 
 }
 
-/* --- NAVIGASI BARU (Clean & Minimalist) --- */
+/* --- NAVIGASI: LATAR MERAH, MENU TULISAN HITAM --- */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.95); /* Putih bersih transparan */
-    padding: 15px 40px;
+    background-color: #b30000; /* Latar belakang merah tetap ada */
+    padding: 12px 40px;
     position: fixed;
     top: 0;
     left: 0;
@@ -27,95 +27,86 @@ body {
     justify-content: space-between; /* Logo kiri, Menu kanan */
     align-items: center;
     z-index: 1000;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.3);
 }
 
 .logo-nhl {
-    color: #000; /* Hitam pekat */
-    font-size: 24px; /* Lebih besar */
-    font-weight: 900; /* Sangat tebal */
-    letter-spacing: 1px;
+    color: #fff; /* Logo putih agar terbaca di merah */
+    font-size: 20px; /* Ukuran dikurangi sikit */
+    font-weight: 800; /* Ketebalan dikurangi sikit dari sebelumnya */
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .menu-links a {
-    color: #000; /* Tulisan hitam saja */
-    padding: 5px 15px;
+    color: #000; /* Tulisan menu HITAM saja */
+    padding: 5px 12px;
     text-decoration: none;
     font-weight: bold; /* Tulisan menu tebal */
-    font-size: 16px;
+    font-size: 15px;
     transition: 0.3s;
+    background: none; /* MENGHAPUS kolom/kotak abu-abu */
 }
 
 .menu-links a:hover {
-    color: #b30000; /* Berubah merah saat hover */
+    color: #fff; /* Saat kursor di atas, tulisan jadi putih agar manis */
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER: TANPA LATAR, TULISAN HITAM --- */
 footer {
-    background-color: #000;
-    color: white;
+    background: none; /* Menghapus latar belakang hitam */
+    color: #000; /* Tulisan hitam */
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 30px;
+    font-weight: 600; /* Tebal dikit saja, tidak tebal kali */
     font-size: 14px;
 }
 
-/* Overlay Konten */
+/* Overlay Konten (Halaman) */
 .page {
     display: none;
     padding: 30px;
-    margin: 20px auto; /* Jarak atas-bawah dikecilkan agar tidak terlalu jauh */
+    margin: 20px auto;
     max-width: 1000px;
     background: rgba(255, 248, 220, 0.95);
     border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
 }
 
 /* Judul */
-h1 {
-    text-align: center;
-    color: #8b0000;
-    font-size: 36px;
-    margin-bottom: 10px;
-}
+h1, h2 { color: #8b0000; }
+h2 { border-bottom: 3px solid #8b0000; padding-bottom: 5px; margin-bottom: 15px; }
 
-h2 {
-    color: #8b0000;
-    border-bottom: 3px solid #8b0000;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-}
-
-/* Form (DIKEMBALIKAN SEPERTI AWAL) */
+/* Form (Rapat sesuai awal) */
 input, textarea {
-    padding: 8px; /* Lebih rapat */
+    padding: 10px;
     width: 100%;
     max-width: 350px;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid #aaa;
-    margin-bottom: 0; /* Menghilangkan jarak berlebih */
+    margin-bottom: 5px;
 }
 
 input[type=submit] {
     background-color: #8b0000;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     font-weight: bold;
     cursor: pointer;
+    width: auto;
     margin-top: 10px;
-    width: auto; /* Tidak full width agar seperti awal */
 }
 
-/* Login & Register (DIBUAT RAPAT) */
+/* Login & Register rapat */
 #login, #register {
     max-width: 400px;
-    margin-top: 40px; /* Jarak dari atas dikurangi agar tidak terlalu jauh */
+    margin-top: 20px;
 }
 
-/* Image & Video */
+/* Media */
 iframe, img {
     margin-top: 15px;
     border-radius: 10px;
@@ -123,14 +114,6 @@ iframe, img {
     max-width: 100%;
 }
 
-/* WhatsApp Floating */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1001;
-}
-.whatsapp img {
-    width: 60px;
-    box-shadow: none;
-}
+/* WhatsApp */
+.whatsapp { position: fixed; bottom: 20px; right: 20px; z-index: 1001; }
+.whatsapp img { width: 60px; box-shadow: none; }
