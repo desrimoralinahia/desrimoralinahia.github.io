@@ -54,9 +54,7 @@
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         
-        element.innerHTML = "Waktu Tersisa: " + days + " Hari " + hours + " Jam " + minutes + " Menit lagi!";
-    }
-}
+        element.innerHTML = "Waktu Tersisa: " + days + " Hari " + hours + " Jam " + minutes + " Menit lagi!";}
 // Jalankan fungsi setiap 1 detik
 setInterval(updateCountdown, 1000);
         function cariArti() {
@@ -84,9 +82,7 @@ setInterval(updateCountdown, 1000);
         hasil.style.color = "red";
     } else {
         hasil.innerHTML = "Maaf, kata '" + kata + "' belum ada di kamus kami.";
-        hasil.style.color = "red";
-    }
-}
+        hasil.style.color = "red";}
     </script>
 </head>
 
@@ -211,11 +207,10 @@ setInterval(updateCountdown, 1000);
             <p style="font-size: 14px;">Pelajari kata dasar kebudayaan Nias:</p>
             <input type="text" id="inputKata" placeholder="Contoh: Ya'ahowu" style="width: 100%; margin-bottom: 10px;">
             <button onclick="cariArti()" style="background: #222; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold;">Cari Arti</button>
-            <p id="hasilKamus" style="margin-top: 15px; font-style: italic; color: #8b0000; min-height: 20px;"></p>
-        </div>
-
+            <p id="hasilKamus" style="margin-top: 15px; font-style: italic; color: #8b0000; min-height: 20px;"></p></div>
+</div>
     <div id="collection" class="page">
-        <body onload="showPage('login'); updateCountdown();">
+        
 <nav class="navbar">
     <div class="logo-nhl">NHL Library</div>
     <div class="menu-links">
@@ -266,9 +261,7 @@ setInterval(updateCountdown, 1000);
     </div>
 
     <div id="service" class="page">
-        <body onload="showPage('login'); updateCountdown();">
-
-  <nav class="navbar">
+       <nav class="navbar">
     <div class="logo-nhl">NHL Library</div>
     <div class="menu-links">
         <a href="#" onclick="showPage('home')">Home</a>
@@ -290,8 +283,7 @@ setInterval(updateCountdown, 1000);
     </div>
 
     <div id="profil" class="page">
-        <body onload="showPage('login'); updateCountdown();">
-
+        
 <nav class="navbar">
     <div class="logo-nhl">NHL Library</div>
     <div class="menu-links">
@@ -317,9 +309,7 @@ setInterval(updateCountdown, 1000);
     </div>
 
     <div id="contact" class="page">
-      <body onload="showPage('login'); updateCountdown();">
-
-   <nav class="navbar">
+        <nav class="navbar">
     <div class="logo-nhl">NHL Library</div>
     <div class="menu-links">
         <a href="#" onclick="showPage('home')">Home</a>
@@ -351,8 +341,6 @@ setInterval(updateCountdown, 1000);
     </div>
 
     <div id="admin" class="page">
-        <body onload="showPage('login'); updateCountdown();">
-
    <nav class="navbar">
     <div class="logo-nhl">NHL Library</div>
     <div class="menu-links">
