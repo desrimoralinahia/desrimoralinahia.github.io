@@ -152,68 +152,69 @@ setInterval(updateCountdown, 1000);
         <a href="#" onclick="logout()">Logout</a>
     </div>
 </nav>
-        <hr>
+    <div class="welcome-section">
         <h1>Welcome to Nias Heritage Library</h1>
         <p>Selamat datang di Nias Heritage Library, ruang literasi digital yang menghadirkan kekayaan sejarah, budaya, dan pesona Nias dalam satu platform yang mudah diakses. Di sini, Anda dapat menjelajahi berbagai koleksi bacaan, dokumentasi, serta informasi terpercaya yang dirancang untuk memperluas wawasan, mendukung kegiatan belajar dan penelitian, serta menumbuhkan kecintaan terhadap warisan daerah Nias bagi generasi sekarang dan masa depan.</p>
-
-        <h2>Event Mendatang</h2>
-        <p id="timer" style="font-weight:bold; color:#d35400;"></p>
-        <p><b>LENTERA NIAS</b></p>
-        <p><i>(Literasi Digital untuk Pelestarian Budaya Nias)</i></p>
-           
-        <p><b>Seminar: Meningkatkan Literasi Digital dalam Pelestarian Budaya Nias</b></p>
-        <p>📅 Tanggal : Senin, 30 Maret 2026</p>
-        <p>🕒 Waktu   : 10.00 WIB – Selesai</p>
-        <p>📍  Tempat  : Online (Zoom Meeting)</p>
-        <p>
-            <a href="https://wa.me/6281360758627" target="_blank">Daftar Disini</a>
-        </p>
-<p>
-Seminar ini bertujuan untuk meningkatkan pemahaman masyarakat mengenai pentingnya literasi digital dalam menjaga dan melestarikan budaya lokal, khususnya budaya Nias.
-</p>
-           
-        <h2>Kalkulator Sederhana</h2>
-        <table border="1" cellpadding="10">
-            <tr>
-                <td>Angka 1</td>
-                <td><input type="number" id="angka1"></td>
-            </tr>
-            <tr>
-                <td>Operasi</td>
-                <td>
-                    <select id="operator">
-                        <option value="+">+</option>
-                        <option value="-">-</option>
-                        <option value="*">×</option>
-                        <option value="/">÷</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Angka 2</td>
-                <td><input type="number" id="angka2"></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <button onclick="hitungKalkulator()">Hitung</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Hasil</td>
-                <td id="hasil"></td>
-            </tr>
-        </table>
-           <hr>
-<h2>Kamus Mini Bahasa Nias</h2>
-<p>Ketik kata dasar Nias untuk tahu artinya (Contoh: <i>Ya'ahowu, Saohagolo, Omo Hada</i>):</p>
-
-<div style="margin-bottom: 20px;">
-    <input type="text" id="inputKata" placeholder="Masukkan kata Nias..." style="width: 250px;">
-    <button onclick="cariArti()" style="padding: 10px; background-color: #8b0000; color: white; border: none; border-radius: 5px; cursor: pointer;">Cari Arti</button>
-</div>
-
-<p id="hasilKamus" style="font-style: italic;"></p>
     </div>
+
+    <div class="home-grid">
+        
+        <div class="card-item">
+            <h2>Event Mendatang</h2>
+            <p id="timer" style="font-weight:bold; color:#d35400; font-size: 14px; margin-bottom: 10px;"></p> 
+            <p><b>LENTERA NIAS</b></p>
+            <p style="font-size: 14px; color: #555;"><i>(Literasi Digital untuk Pelestarian Budaya Nias)</i></p>
+            <hr style="margin: 10px 0; border-top: 1px solid #eee;">
+            <p>📅 Tanggal: Senin, 30 Maret 2026</p>
+            <p>🕒 Waktu: 10.00 WIB – Selesai</p>
+            <p>📍 Tempat: Online (Zoom Meeting)</p>
+            <p>Seminar ini bertujuan untuk meningkatkan pemahaman masyarakat mengenai pentingnya literasi digital dalam menjaga dan melestarikan budaya lokal, khususnya budaya Nias.</p>
+            <br>
+            <a href="https://wa.me/6281360758627" target="_blank" style="background-color: #8b0000; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; font-size: 14px;">Daftar Disini</a>
+        </div>
+
+        <div class="card-item">
+            <h2>Kalkulator Perpustakaan</h2>
+            <table border="0" cellpadding="5" style="width: 100%;">
+                <tr>
+                    <td>Angka 1</td>
+                    <td><input type="number" id="angka1" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td>Operasi</td>
+                    <td>
+                        <select id="operator" style="width: 100%; padding: 8px;">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                            <option value="*">×</option>
+                            <option value="/">÷</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Angka 2</td>
+                    <td><input type="number" id="angka2" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button onclick="hitungKalkulator()" style="background: #8b0000; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold;">Hitung</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="hasil" style="text-align: center; font-weight: bold; padding-top: 10px; color: #8b0000;">Hasil: -</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card-item">
+            <h2>Kamus Mini Nias</h2>
+            <p style="font-size: 14px;">Pelajari kata dasar kebudayaan Nias:</p>
+            <input type="text" id="inputKata" placeholder="Contoh: Ya'ahowu" style="width: 100%; margin-bottom: 10px;">
+            <button onclick="cariArti()" style="background: #222; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold;">Cari Arti</button>
+            <p id="hasilKamus" style="margin-top: 15px; font-style: italic; color: #333; min-height: 20px;"></p>
+        </div>
+
+    </div> 
 
     <div id="collection" class="page">
         <body onload="showPage('login'); updateCountdown();">
