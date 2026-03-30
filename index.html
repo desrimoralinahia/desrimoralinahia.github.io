@@ -3,329 +3,290 @@
 <head>
     <title>Perpustakaan Desri</title>
     <link rel="stylesheet" href="style.css">
-<script>
-function showPage(pageId) {
-    var pages = document.getElementsByClassName("page");
-    for (var i = 0; i < pages.length; i++) {
-        pages[i].style.display = "none";}
-    document.getElementById(pageId).style.display = "block";}
-function logout() {
-    var forms = document.getElementsByTagName("form");
-    for (var i = 0; i < forms.length; i++) {
-        forms[i].reset();}
-    showPage('login');}
-    
-    function hitungKalkulator() {
-    var angka1 = document.getElementById("angka1").value;
-    var angka2 = document.getElementById("angka2").value;
-    var operator = document.getElementById("operator").value;
+    <script>
+        function showPage(pageId) {
+            var pages = document.getElementsByClassName("page");
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = "none";
+            }
+            document.getElementById(pageId).style.display = "block";
+        }
 
-    var hasil;
+        function logout() {
+            var forms = document.getElementsByTagName("form");
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].reset();
+            }
+            showPage('login');
+        }
 
-    if (operator == "+") {
-        hasil = Number(angka1) + Number(angka2);
-    } else if (operator == "-") {
-        hasil = angka1 - angka2;
-    } else if (operator == "*") {
-        hasil = angka1 * angka2;
-    } else if (operator == "/") {
-        hasil = angka1 / angka2;}
+        function hitungKalkulator() {
+            var angka1 = document.getElementById("angka1").value;
+            var angka2 = document.getElementById("angka2").value;
+            var operator = document.getElementById("operator").value;
+            var hasil;
 
-    document.getElementById("hasil").innerHTML = "Hasil: " + hasil;}
-</script>
+            if (operator == "+") {
+                hasil = Number(angka1) + Number(angka2);
+            } else if (operator == "-") {
+                hasil = angka1 - angka2;
+            } else if (operator == "*") {
+                hasil = angka1 * angka2;
+            } else if (operator == "/") {
+                hasil = angka1 / angka2;
+            }
+
+            document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
+        }
+    </script>
 </head>
+
 <body onload="showPage('login')">
-<div id="login" class="page">
-    <h2>Login Perpustakaan Desri</h2>
-    <form onsubmit="showPage('home'); return false;">
-        Last Name:<br>
-        <input type="text"><br><br>
-        
-        First Name:<br>
-        <input type="text"><br><br>
 
-        Email:<br>
-        <input type="email"><br><br>
+    <div id="login" class="page">
+        <h2>Login Perpustakaan Desri</h2>
+        <form onsubmit="showPage('home'); return false;">
+            Last Name:<br>
+            <input type="text"><br><br>
 
-        Password:<br>
-        <input type="password"><br><br>
+            First Name:<br>
+            <input type="text"><br><br>
 
-        No Handphone:<br>
-        <input type="text"><br><br>
+            Email:<br>
+            <input type="email"><br><br>
 
-        <input type="submit" value="Login">
-    </form>
-    <p>Belum punya akun? 
-        <a href="#" onclick="showPage('register')">Daftar di sini</a></p>
-</div>
-<div id="register" class="page">
-    <h2>Daftar Akun Baru</h2>
-    <form onsubmit="showPage('login'); return false;">
-        Last Name:<br>
-        <input type="text"><br><br>
+            Password:<br>
+            <input type="password"><br><br>
 
-        First Name:<br>
-        <input type="text"><br><br>
+            No Handphone:<br>
+            <input type="text"><br><br>
 
-        Email:<br>
-        <input type="email"><br><br>
-
-        No Handphone:<br>
-        <input type="text"><br><br>
-
-        Password:<br>
-        <input type="password"><br><br>
-
-        <input type="submit" value="Daftar">
-    </form>
-</div>
-<div id="home" class="page">
-    <nav>
-        <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('collection')">Collection</a>
-        <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('profil')">Profil</a>
-        <a href="#" onclick="showPage('contact')">Contact Us</a>
-        <a href="#" onclick="showPage('admin')">Admin</a>
-        <a href="#" onclick="logout()">Logout</a>
-    </nav>
-    <hr>
-    <h1>Welcome to Nias Heritage Library</h1>
-    <p>Selamat datang di Nias Heritage Library, ruang literasi digital yang menghadirkan kekayaan sejarah, budaya, dan pesona Nias dalam satu platform yang mudah diakses. Di sini, Anda dapat menjelajahi berbagai koleksi bacaan, dokumentasi, serta informasi terpercaya yang dirancang untuk memperluas wawasan, mendukung kegiatan belajar dan penelitian, serta menumbuhkan kecintaan terhadap warisan daerah Nias bagi generasi sekarang dan masa depan.</p>
-
-    <h2>Event Mendatang</h2>
-
-<p><b>LENTERA NIAS</b></p>
-<p><i>(Literasi Digital untuk Pelestarian Budaya Nias)</i></p>
-
-<p><b>Seminar: Meningkatkan Literasi Digital dalam Pelestarian Budaya Nias</b></p>
-
-<p>📅 Tanggal: Senin, 30 Maret 2026</p>
-<p>🕒 Waktu: 10.00 WIB – Selesai</p>
-<p>📍 Tempat: Online (Zoom Meeting)</p>
-
-<p>
-Seminar ini bertujuan untuk meningkatkan pemahaman masyarakat mengenai pentingnya literasi digital dalam menjaga dan melestarikan budaya lokal, khususnya budaya Nias.
-</p>
-
-<p>
-<a href="https://wa.me/6281360758627" target="_blank">
-    Daftar Disini
-</a>
-</p>
-    
-   <h2>Kalkulator Sederhana</h2>
-
-<table border="1" cellpadding="10">
-    <tr>
-        <td>Angka 1</td>
-        <td><input type="number" id="angka1"></td>
-    </tr>
-
-    <tr>
-        <td>Operasi</td>
-        <td>
-            <select id="operator">
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">×</option>
-                <option value="/">÷</option>
-            </select>
-        </td>
-    </tr>
-
-    <tr>
-        <td>Angka 2</td>
-        <td><input type="number" id="angka2"></td>
-    </tr>
-
-    <tr>
-        <td colspan="2" align="center">
-            <button onclick="hitungKalkulator()">Hitung</button>
-        </td>
-    </tr>
-
-    <tr>
-        <td>Hasil</td>
-        <td id="hasil"></td>
-    </tr>
-</table>
+            <input type="submit" value="Login">
+        </form>
+        <p>Belum punya akun? <a href="#" onclick="showPage('register')">Daftar di sini</a></p>
     </div>
-<!-- ================= COLLECTION ================= -->
-<div id="collection" class="page">
-    <nav>
-        <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('collection')">Collection</a>
-        <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('profil')">Profil</a>
-        <a href="#" onclick="showPage('contact')">Contact Us</a>
-        <a href="#" onclick="showPage('admin')">Admin</a>
-        <a href="#" onclick="logout()">Logout</a>
-    </nav>
 
-    <hr>
+    <div id="register" class="page">
+        <h2>Daftar Akun Baru</h2>
+        <form onsubmit="showPage('login'); return false;">
+            Last Name:<br>
+            <input type="text"><br><br>
 
-    <h2>Collection</h2>
+            First Name:<br>
+            <input type="text"><br><br>
 
-    <ul>
-        <li>
-            Asal Usul Orang Nias <br>
-            <a href="https://drive.google.com/file/d/1wi7LzKZ824M8pnYInvFmp3dVAtSkxHjF/view?usp=drive_link" target="_blank">
-                Buka
-            </a>
-        </li>
-        <br>
+            Email:<br>
+            <input type="email"><br><br>
 
-        <li>
-            Adat dan Budaya Suku Nias <br>
-            <a href="https://drive.google.com/file/d/1UXI4418mhWZkSAnyKd0mccH3XR2uC7tA/view?usp=drive_link" target="_blank">
-                Buka
-            </a>
-        </li>
-        <br>
+            No Handphone:<br>
+            <input type="text"><br><br>
 
-        <li>
-            Museum Pusaka Nias <br>
-            <a href="https://museum-nias.org/" target="_blank">
-                Buka
-            </a>
-        </li>
-        <br>
+            Password:<br>
+            <input type="password"><br><br>
 
-        <li>
-            Cerita Rakyat Nias <br>
-            <a href="https://www.scribd.com/document/750395009/Legenda-Laowomaru" target="_blank">
-                Buka
-            </a>
-        </li>
-        <br>
+            <input type="submit" value="Daftar">
+        </form>
+    </div>
 
-        <li>
-            Jurnal Penelitian <br>
-            <a href="https://drive.google.com/file/d/14dmCk0IRwWuSxMkAgUswqb1CwMhcJyEf/view?usp=sharing" target="_blank">
-                Buka
-            </a>
-        </li>
-        <br>
+    <div id="home" class="page">
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('collection')">Collection</a>
+            <a href="#" onclick="showPage('service')">Service</a>
+            <a href="#" onclick="showPage('profil')">Profil</a>
+            <a href="#" onclick="showPage('contact')">Contact Us</a>
+            <a href="#" onclick="showPage('admin')">Admin</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+        <hr>
+        <h1>Welcome to Nias Heritage Library</h1>
+        <p>Selamat datang di Nias Heritage Library, ruang literasi digital yang menghadirkan kekayaan sejarah, budaya, dan pesona Nias dalam satu platform yang mudah diakses. Di sini, Anda dapat menjelajahi berbagai koleksi bacaan, dokumentasi, serta informasi terpercaya yang dirancang untuk memperluas wawasan, mendukung kegiatan belajar dan penelitian, serta menumbuhkan kecintaan terhadap warisan daerah Nias bagi generasi sekarang dan masa depan.</p>
 
-        <li>
-            Dokumentasi <br><br>
+        <h2>Event Mendatang</h2>
+        <p><b>LENTERA NIAS</b></p>
+        <p><i>(Literasi Digital untuk Pelestarian Budaya Nias)</i></p>
+        <p><b>Seminar: Meningkatkan Literasi Digital dalam Pelestarian Budaya Nias</b></p>
+        <p>📅 Tanggal: Senin, 30 Maret 2026</p>
+        <p>🕒 Waktu: 10.00 WIB – Selesai</p>
+        <p>📍 Tempat: Online (Zoom Meeting)</p>
+        <p>
+            <a href="https://wa.me/6281360758627" target="_blank">Daftar Disini</a>
+        </p>
 
-            <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/6mIdhdBSbbo?si=9N1yf1Js-CPcZIr9"
-                allowfullscreen>
-            </iframe>
+        <h2>Kalkulator Sederhana</h2>
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>Angka 1</td>
+                <td><input type="number" id="angka1"></td>
+            </tr>
+            <tr>
+                <td>Operasi</td>
+                <td>
+                    <select id="operator">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">×</option>
+                        <option value="/">÷</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Angka 2</td>
+                <td><input type="number" id="angka2"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button onclick="hitungKalkulator()">Hitung</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Hasil</td>
+                <td id="hasil"></td>
+            </tr>
+        </table>
+    </div>
 
-            <br><br>
+    <div id="collection" class="page">
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('collection')">Collection</a>
+            <a href="#" onclick="showPage('service')">Service</a>
+            <a href="#" onclick="showPage('profil')">Profil</a>
+            <a href="#" onclick="showPage('contact')">Contact Us</a>
+            <a href="#" onclick="showPage('admin')">Admin</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+        <hr>
+        <h2>Collection</h2>
+        <ul>
+            <li>
+                Asal Usul Orang Nias <br>
+                <a href="https://drive.google.com/file/d/1wi7LzKZ824M8pnYInvFmp3dVAtSkxHjF/view?usp=drive_link" target="_blank">Buka</a>
+            </li>
+            <br>
+            <li>
+                Adat dan Budaya Suku Nias <br>
+                <a href="https://drive.google.com/file/d/1UXI4418mhWZkSAnyKd0mccH3XR2uC7tA/view?usp=drive_link" target="_blank">Buka</a>
+            </li>
+            <br>
+            <li>
+                Museum Pusaka Nias <br>
+                <a href="https://museum-nias.org/" target="_blank">Buka</a>
+            </li>
+            <br>
+            <li>
+                Cerita Rakyat Nias <br>
+                <a href="https://www.scribd.com/document/750395009/Legenda-Laowomaru" target="_blank">Buka</a>
+            </li>
+            <br>
+            <li>
+                Jurnal Penelitian <br>
+                <a href="https://drive.google.com/file/d/14dmCk0IRwWuSxMkAgUswqb1CwMhcJyEf/view?usp=sharing" target="_blank">Buka</a>
+            </li>
+            <br>
+            <li>
+                Dokumentasi <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6mIdhdBSbbo?si=9N1yf1Js-CPcZIr9" allowfullscreen></iframe>
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ge-yg6m2sf8?si=R4fCtTx_nK2NMQGV" allowfullscreen></iframe>
+            </li>
+        </ul>
+    </div>
 
-            <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/ge-yg6m2sf8?si=R4fCtTx_nK2NMQGV"
-                allowfullscreen>
-            </iframe>
-        </li>
-    </ul>
-</div>
-<div id="service" class="page">
-    <nav>
-        <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('collection')">Collection</a>
-        <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('profil')">Profil</a>
-        <a href="#" onclick="showPage('contact')">Contact Us</a>
-        <a href="#" onclick="showPage('admin')">Admin</a>
-        <a href="#" onclick="logout()">Logout</a>
-    </nav>
-    <hr>
-    <h2>Opening Time</h2>
-    <ul>
-        <li>Senin - Jumat : 08.00 - 16.00</li>
-        <li>Sabtu         : 09.00 - 14.00</li>
-        <li>Minggu        : Tutup</li>
-    </ul>
-</div>
-<div id="profil" class="page">
-    <nav>
-        <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('collection')">Collection</a>
-        <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('profil')">Profil</a>
-        <a href="#" onclick="showPage('contact')">Contact Us</a>
-        <a href="#" onclick="showPage('admin')">Admin</a>
-        <a href="#" onclick="logout()">Logout</a>
-    </nav>
-    <hr>
-    <h2>About Libraries</h2>
-    <p>Nias Heritage Library berdiri sejak tahun 2026 yang merupakan perpustakaan umum berbasis digital berfungsi sebagai pusat informasi tentang sejarah, budaya, wisata NIAS. Perpustakaan ini dapat diakses oleh semua kalangan dari pelajar, mahasiswa, peneliti hingga wisatawan yang ingin mengenal Nias lebih dalam. Melalui pemanfaatan teknologi digital, NHL bertujuan untuk melestarikan warisan budaya Nias sekaligus menjadi sumber referensi yang mudah diakses, edukatif, dan bermanfaat bagi generasi sekarang maupun yang akan datang.</p>
-    <p>Visi</p>
-    <p>Menjadi pusat informasi dan referensi digital terpercaya yang melestarikan serta memperkenalkan sejarah, budaya, dan kekayaan daerah Nias kepada masyarakat luas.</p>
-    <p>Misi</p>
-    <p>* Menghimpun dan menyediakan koleksi informasi tentang sejarah, budaya, wisata, dan perkembangan Nias secara lengkap dan terstruktur.</p>
-    <p>* Memanfaatkan teknologi digital untuk mempermudah akses informasi bagi semua kalangan.</p>
-    <p>* Mendukung kegiatan pendidikan, penelitian, dan pelestarian warisan budaya Nias.</p>
-    <p>* Menjadi media edukasi yang membantu masyarakat mengenal dan mencintai identitas daerah Nias.</p>
-</div>
-<div id="contact" class="page">
-    <nav>
-        <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('collection')">Collection</a>
-        <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('profil')">Profil</a>
-        <a href="#" onclick="showPage('contact')">Contact Us</a>
-        <a href="#" onclick="showPage('admin')">Admin</a>
-        <a href="#" onclick="logout()">Logout</a>
-    </nav>
-    <hr>
-     <h2>Contact Us</h2>
-    <p>Email: desmor830@gmail.com</p>
-   <p><a href="https://wa.me/6281360758627" target="_blank">WhatsApp Admin</a></p>
-    <p><a href="https://www.instagram.com/desri_hia">Instagram</a></p>
-    <p><a href="https://www.facebook.com/share/1GPpua2KP3/">Facebook</a></p>
-    <h3>Formulir Pesan</h3>
-    <form>
-        Nama:<br>
-        <input type="text"><br><br>
+    <div id="service" class="page">
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('collection')">Collection</a>
+            <a href="#" onclick="showPage('service')">Service</a>
+            <a href="#" onclick="showPage('profil')">Profil</a>
+            <a href="#" onclick="showPage('contact')">Contact Us</a>
+            <a href="#" onclick="showPage('admin')">Admin</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+        <hr>
+        <h2>Opening Time</h2>
+        <ul>
+            <li>Senin - Jumat : 08.00 - 16.00</li>
+            <li>Sabtu : 09.00 - 14.00</li>
+            <li>Minggu : Tutup</li>
+        </ul>
+    </div>
 
-        Email:<br>
-        <input type="email"><br><br>
+    <div id="profil" class="page">
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('collection')">Collection</a>
+            <a href="#" onclick="showPage('service')">Service</a>
+            <a href="#" onclick="showPage('profil')">Profil</a>
+            <a href="#" onclick="showPage('contact')">Contact Us</a>
+            <a href="#" onclick="showPage('admin')">Admin</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+        <hr>
+        <h2>About Libraries</h2>
+        <p>Nias Heritage Library berdiri sejak tahun 2026 yang merupakan perpustakaan umum berbasis digital berfungsi sebagai pusat informasi tentang sejarah, budaya, wisata NIAS. Perpustakaan ini dapat diakses oleh semua kalangan dari pelajar, mahasiswa, peneliti hingga wisatawan yang ingin mengenal Nias lebih dalam. Melalui pemanfaatan teknologi digital, NHL bertujuan untuk melestarikan warisan budaya Nias sekaligus menjadi sumber referensi yang mudah diakses, edukatif, dan bermanfaat bagi generasi sekarang maupun yang akan datang.</p>
+        <p><b>Visi</b></p>
+        <p>Menjadi pusat informasi dan referensi digital terpercaya yang melestarikan serta memperkenalkan sejarah, budaya, dan kekayaan daerah Nias kepada masyarakat luas.</p>
+        <p><b>Misi</b></p>
+        <p>* Menghimpun dan menyediakan koleksi informasi tentang sejarah, budaya, wisata, dan perkembangan Nias secara lengkap dan terstruktur.</p>
+        <p>* Memanfaatkan teknologi digital untuk mempermudah akses informasi bagi semua kalangan.</p>
+        <p>* Mendukung kegiatan pendidikan, penelitian, dan pelestarian warisan budaya Nias.</p>
+        <p>* Menjadi media edukasi yang membantu masyarakat mengenal dan mencintai identitas daerah Nias.</p>
+    </div>
 
-        Pesan:<br>
-        <textarea rows="4" cols="30"></textarea><br><br>
+    <div id="contact" class="page">
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('collection')">Collection</a>
+            <a href="#" onclick="showPage('service')">Service</a>
+            <a href="#" onclick="showPage('profil')">Profil</a>
+            <a href="#" onclick="showPage('contact')">Contact Us</a>
+            <a href="#" onclick="showPage('admin')">Admin</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+        <hr>
+        <h2>Contact Us</h2>
+        <p>Email: desmor830@gmail.com</p>
+        <p><a href="https://wa.me/6281360758627" target="_blank">WhatsApp Admin</a></p>
+        <p><a href="https://www.instagram.com/desri_hia">Instagram</a></p>
+        <p><a href="https://www.facebook.com/share/1GPpua2KP3/">Facebook</a></p>
+        <h3>Formulir Pesan</h3>
+        <form>
+            Nama:<br>
+            <input type="text"><br><br>
+            Email:<br>
+            <input type="email"><br><br>
+            Pesan:<br>
+            <textarea rows="4" cols="30"></textarea><br><br>
+            <input type="submit" value="Kirim">
+        </form>
+    </div>
 
-        <input type="submit" value="Kirim">
-    </form>
-</div>    
-<div id="admin" class="page">
-    <nav>
-        <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('collection')">Collection</a>
-        <a href="#" onclick="showPage('service')">Service</a>
-        <a href="#" onclick="showPage('profil')">Profil</a>
-        <a href="#" onclick="showPage('contact')">Contact Us</a>
-        <a href="#" onclick="showPage('admin')">Admin</a>
-        <a href="#" onclick="logout()">Logout</a>
-    </nav>
-    <hr>
-    <h2>Admin</h2>
-    <p>
-        <a href="https://wa.me/6281360758627" target="_blank" rel="noopener noreferrer">
-            WhatsApp Admin</a> </p>
+    <div id="admin" class="page">
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('collection')">Collection</a>
+            <a href="#" onclick="showPage('service')">Service</a>
+            <a href="#" onclick="showPage('profil')">Profil</a>
+            <a href="#" onclick="showPage('contact')">Contact Us</a>
+            <a href="#" onclick="showPage('admin')">Admin</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+        <hr>
+        <h2>Admin</h2>
+        <p><a href="https://wa.me/6281360758627" target="_blank" rel="noopener noreferrer">WhatsApp Admin</a></p>
+        <p><a href="https://www.instagram.com/desri_hia" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <p><a href="https://www.facebook.com/share/1GPpua2KP3/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+        <p><a href="https://drive.google.com/file/d/1wZL1pqHDX50uAKH0aYgl5e1xYB8LVlVf/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a></p>
+        <h3>Pantai Sorake Nias Selatan</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JfZl9T-YJ5E?si=WaMBpOQAryUcGuR1" allowfullscreen></iframe>
+    </div>
 
-    <p> <a href="https://www.instagram.com/desri_hia" target="_blank" rel="noopener noreferrer">
-            Instagram </a></p>
-
-    <p><a href="https://www.facebook.com/share/1GPpua2KP3/" target="_blank" rel="noopener noreferrer">
-            Facebook</a></p>
-    
-    <p><a href="https://drive.google.com/file/d/1wZL1pqHDX50uAKH0aYgl5e1xYB8LVlVf/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
-            Curriculum Vitae</a></p>
-     <h3>Pantai Sorake Nias Selatan</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JfZl9T-YJ5E?si=WaMBpOQAryUcGuR1" 
-    </iframe>
-</div> 
-<div class="whatsapp">
-    <a href="https://wa.me/6281360758627" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png"></a>
-</div>
+    <div class="whatsapp">
+        <a href="https://wa.me/6281360758627" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" style="width:50px;">
+        </a>
+    </div>
 
 </body>
 </html>
