@@ -117,3 +117,63 @@ iframe, img {
 /* WhatsApp */
 .whatsapp { position: fixed; bottom: 20px; right: 20px; z-index: 1001; }
 .whatsapp img { width: 60px; box-shadow: none; }
+/* --- TAMPILAN BARU UNTUK HALAMAN HOME --- */
+
+/* Welcome Section agar di tengah dan tidak lengket */
+.welcome-section {
+    text-align: center;
+    padding: 50px 20px; /* Memberi jarak atas dan bawah */
+    margin-bottom: 20px;
+}
+
+.welcome-section h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+    color: #8b0000;
+}
+
+.welcome-section p {
+    max-width: 850px;
+    margin: 0 auto; /* Supaya teks deskripsi di tengah */
+    line-height: 1.8;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Container untuk kolom-kolom (Grid) */
+.home-grid {
+    display: flex;
+    flex-wrap: wrap; /* Supaya otomatis turun ke bawah kalau layar kecil/HP */
+    gap: 25px; /* Jarak antar kotak agar tidak lengket */
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Gaya Kotak/Kartu */
+.card-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Bayangan halus */
+    flex: 1;
+    min-width: 300px; /* Ukuran minimal kotak */
+    max-width: 400px; /* Ukuran maksimal kotak */
+    border-top: 5px solid #8b0000; /* Garis merah di atas kotak agar senada */
+    transition: 0.3s;
+}
+
+/* Efek saat kursor menyentuh kotak */
+.card-item:hover {
+    transform: translateY(-5px); /* Kotak sedikit naik ke atas */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Merapikan tabel di dalam kartu */
+.card-item table {
+    width: 100%;
+}
+
+.card-item input, .card-item select {
+    width: 100% !important; /* Memastikan input memenuhi lebar kotak */
+    margin-bottom: 10px;
+}
