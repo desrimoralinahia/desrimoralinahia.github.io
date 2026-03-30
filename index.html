@@ -59,6 +59,34 @@
 }
 // Jalankan fungsi setiap 1 detik
 setInterval(updateCountdown, 1000);
+        function cariArti() {
+    var kata = document.getElementById("inputKata").value.toLowerCase();
+    var hasil = document.getElementById("hasilKamus");
+    
+    // Ini adalah database kata sederhana (Bahasa Nias : Arti)
+    var kamus = {
+        "ya'ahowu": "Salam khas Nias (Semoga diberkati).",
+        "omo hada": "Rumah adat tradisional Nias.",
+        "hombo batu": "Tradisi lompat batu (Fahombo).",
+        "afo": "Sirih (biasanya disuguhkan untuk tamu kehormatan).",
+        "tano niha": "Tanah Nias (sebutan orang Nias untuk pulau mereka).",
+        "ono niha": "Anak Nias (sebutan untuk suku bangsa Nias).",
+        "malu": "Hormat / Sopan.",
+        "saohagolo": "Terima kasih.",
+        "hezo": "Mana / Ke mana."
+    };
+
+    if (kamus[kata]) {
+        hasil.innerHTML = "<b>Arti:</b> " + kamus[kata];
+        hasil.style.color = "black";
+    } else if (kata == "") {
+        hasil.innerHTML = "Silakan ketik satu kata di atas!";
+        hasil.style.color = "red";
+    } else {
+        hasil.innerHTML = "Maaf, kata '" + kata + "' belum ada di kamus kami.";
+        hasil.style.color = "red";
+    }
+}
     </script>
 </head>
 
@@ -175,6 +203,16 @@ Seminar ini bertujuan untuk meningkatkan pemahaman masyarakat mengenai pentingny
                 <td id="hasil"></td>
             </tr>
         </table>
+           <hr>
+<h2>Kamus Mini Bahasa Nias</h2>
+<p>Ketik kata dasar Nias untuk tahu artinya (Contoh: <i>Ya'ahowu, Saohagolo, Omo Hada</i>):</p>
+
+<div style="margin-bottom: 20px;">
+    <input type="text" id="inputKata" placeholder="Masukkan kata Nias..." style="width: 250px;">
+    <button onclick="cariArti()" style="padding: 10px; background-color: #8b0000; color: white; border: none; border-radius: 5px; cursor: pointer;">Cari Arti</button>
+</div>
+
+<p id="hasilKamus" style="font-style: italic;"></p>
     </div>
 
     <div id="collection" class="page">
