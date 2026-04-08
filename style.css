@@ -180,7 +180,7 @@ iframe, img {
 /* Warna menu saat aktif/sedang dibuka */
 .menu-links a.active {
     background-color: #F5F0D5; 
-    color: white !important;
+    color: black !important;
     border-radius: 5px;
     font-weight: bold;
 }
