@@ -177,3 +177,10 @@ iframe, img {
     width: 100% !important; /* Memastikan input memenuhi lebar kotak */
     margin-bottom: 10px;
 }
+/* Warna menu saat aktif/sedang dibuka */
+.menu-links a.active {
+    background-color: #ff0000; /* Merah terang agar mencolok */
+    color: white !important;
+    border-radius: 5px;
+    font-weight: bold;
+}
