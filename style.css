@@ -179,7 +179,7 @@ iframe, img {
 }
 /* Warna menu saat aktif/sedang dibuka */
 .menu-links a.active {
-    background-color: #ff0000; /* Merah terang agar mencolok */
+    background-color: #F5F0D5; 
     color: white !important;
     border-radius: 5px;
     font-weight: bold;
