@@ -418,45 +418,47 @@ setInterval(updateCountdown, 1000);
     </div>
 </nav>
     <div class="welcome-section">
-        <h2>Maps & Guide NHL</h2>
-        <p>Gunakan panduan ini untuk menemukan informasi yang Anda butuhkan.</p>
+        <h2>Peta Navigasi & Panduan NHL</h2>
+        <p>Klik pada kotak menu di bawah ini untuk langsung menuju halaman yang Anda cari.</p>
     </div>
 
     <div class="home-grid">
-        <div class="card-item">
-            <h3 style="color: #8b0000;">Menu HOME</h3>
-            <p>Berisi ucapan selamat datang dan ringkasan perpustakaan.</p>
+        <div class="card-item" onclick="showPage('home')" style="cursor: pointer; border: 2px solid #8b0000;">
+            <h3 style="color: #8b0000;">🏠 HOME (Beranda)</h3>
+            <p>Halaman utama yang berisi sambutan hangat, visi misi singkat, dan ringkasan tentang kekayaan literasi digital Nias Heritage Library.</p>
         </div>
 
-        <div class="card-item">
-            <h3 style="color: #8b0000;">Menu COLLECTION</h3>
-            <p>Cari Buku, Jurnal, dan Arsip Budaya Nias di sini.</p>
+        <div class="card-item" onclick="showPage('collection')" style="cursor: pointer; border: 2px solid #8b0000;">
+            <h3 style="color: #8b0000;">📚 COLLECTION (Koleksi)</h3>
+            <p>Gudang ilmu kami. Di sini Anda bisa mencari Buku Digital, Jurnal Penelitian, serta Arsip Sejarah Budaya Nias yang sudah didigitalkan.</p>
         </div>
 
-        <div class="card-item">
-            <h3 style="color: #8b0000;">Menu SERVICE</h3>
-            <p>Informasi pendaftaran anggota dan layanan peminjaman.</p>
+        <div class="card-item" onclick="showPage('service')" style="cursor: pointer; border: 2px solid #8b0000;">
+            <h3 style="color: #8b0000;">🛠️ SERVICE (Layanan)</h3>
+            <p>Berisi informasi cara mendaftar jadi anggota, prosedur peminjaman buku fisik ke gedung NHL, serta fasilitas ruang baca yang tersedia.</p>
         </div>
 
-        <div class="card-item">
-            <h3 style="color: #8b0000;">Menu EVENT</h3>
-            <p>Cek jadwal lomba, webinar, dan kegiatan literasi terbaru.</p>
+        <div class="card-item" onclick="showPage('profil')" style="cursor: pointer; border: 2px solid #8b0000;">
+            <h3 style="color: #8b0000;">🏛️ PROFIL (Tentang Kami)</h3>
+            <p>Penjelasan mendalam mengenai sejarah berdirinya NHL, struktur organisasi para pengurus, serta cita-cita kami untuk budaya Nias.</p>
         </div>
 
-        <div class="card-item">
-            <h3 style="color: #8b0000;">Menu PROFIL</h3>
-            <p>Berisi sejarah, visi-misi, dan kepengurusan NHL.</p>
+        <div class="card-item" onclick="showPage('event')" style="cursor: pointer; border: 2px solid #8b0000;">
+            <h3 style="color: #8b0000;">📅 EVENT (Kegiatan)</h3>
+            <p>Pusat update kegiatan terbaru. Cari jadwal Lomba Menulis, Nias Storytelling, Webinar Kebudayaan, dan pendaftaran event literasi di sini.</p>
         </div>
 
-        <div class="card-item">
-            <h3 style="color: #8b0000;">Menu CONTACT US</h3>
-            <p>Hubungi admin via WhatsApp, Email, atau lihat lokasi kami.</p>
+        <div class="card-item" onclick="showPage('contact')" style="cursor: pointer; border: 2px solid #8b0000;">
+            <h3 style="color: #8b0000;">📞 CONTACT US (Hubungi Kami)</h3>
+            <p>Butuh bantuan admin? Halaman ini menyediakan nomor WhatsApp, alamat email, lokasi Google Maps kantor, dan formulir pesan singkat.</p>
+        </div>
+
+        <div class="card-item" onclick="showPage('admin')" style="cursor: pointer; border: 2px solid #2c3e50; background-color: #f9f9f9;">
+            <h3 style="color: #2c3e50;">🔑 ADMIN (Khusus Petugas)</h3>
+            <p>Pintu masuk khusus untuk admin perpustakaan. Digunakan untuk mengelola data anggota, mengedit daftar buku, dan mengatur jadwal event.</p>
         </div>
     </div>
 </div>
-        
-        
-
     <div id="admin" class="page">
         <body onload="showPage('login'); updateCountdown();">
 
