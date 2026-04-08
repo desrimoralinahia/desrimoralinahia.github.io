@@ -49,7 +49,7 @@ body {
 }
 
 .menu-links a:hover {
-    color: #fff; /* Saat kursor di atas, tulisan jadi putih agar manis */
+    color:#000000; 
 }
 
 /* --- FOOTER: TANPA LATAR, TULISAN HITAM --- */
