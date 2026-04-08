@@ -6,11 +6,29 @@
     <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script>
-        function showPage(pageId) {
-            var pages = document.getElementsByClassName("page");
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = "none";}
-            document.getElementById(pageId).style.display = "block";}
+       function showPage(pageId) {
+    // 1. Sembunyikan semua halaman
+    var pages = document.getElementsByClassName("page");
+    for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = "none";
+    }
+
+    // 2. Tampilkan halaman yang dipilih
+    document.getElementById(pageId).style.display = "block";
+
+    // 3. Atur penanda (Active Link) di menu
+    var links = document.querySelectorAll(".menu-links a");
+    links.forEach(link => {
+        // Hapus kelas 'active' dari semua menu
+        link.classList.remove("active");
+        
+        // Tambahkan kelas 'active' kalau teks menu cocok dengan pageId
+        // Contoh: jika pageId 'home', maka menu yang ada onclick showPage('home') jadi aktif
+        if (link.getAttribute("onclick").includes("'" + pageId + "'")) {
+            link.classList.add("active");
+        }
+    });
+}
         function logout() {
             var forms = document.getElementsByTagName("form");
             for (var i = 0; i < forms.length; i++) {
