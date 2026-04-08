@@ -213,3 +213,29 @@ body {
     background-color: #222 !important;
     background-image: none !important;
 }
+/* Jarak agar konten tidak tertutup navbar */
+body {
+    padding-top: 60px;
+}
+
+/* Di Laptop: Menu menyamping, teks putih */
+.navbar .nav > li > a {
+    color: white !important;
+    text-shadow: none;
+}
+
+/* Di HP (Layar Kecil): Tampilan Hamburger & Menu Hitam */
+@media (max-width: 979px) {
+    /* Menu jadi list vertikal saat dibuka */
+    .nav-collapse .nav > li > a {
+        color: #000000 !important; /* Teks Hitam di HP */
+        background-color: #F5F0D5; /* Latar krem sesuai tema */
+        border-bottom: 1px solid #ddd;
+    }
+    
+    /* Warna saat menu di HP ditekan */
+    .nav-collapse .nav > li > a:hover {
+        background-color: #8b0000 !important;
+        color: white !important;
+    }
+}
