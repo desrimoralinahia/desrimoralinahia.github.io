@@ -7,19 +7,13 @@
         function showPage(pageId) {
             var pages = document.getElementsByClassName("page");
             for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = "none";
-            }
-            document.getElementById(pageId).style.display = "block";
-        }
-
+                pages[i].style.display = "none";}
+            document.getElementById(pageId).style.display = "block";}
         function logout() {
             var forms = document.getElementsByTagName("form");
             for (var i = 0; i < forms.length; i++) {
-                forms[i].reset();
-            }
-            showPage('login');
-        }
-
+                forms[i].reset();}
+            showPage('login');}
         function hitungKalkulator() {
             var angka1 = document.getElementById("angka1").value;
             var angka2 = document.getElementById("angka2").value;
@@ -33,11 +27,8 @@
             } else if (operator == "*") {
                 hasil = angka1 * angka2;
             } else if (operator == "/") {
-                hasil = angka1 / angka2;
-            }
-
-            document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
-        }
+                hasil = angka1 / angka2;}
+            document.getElementById("hasil").innerHTML = "Hasil: " + hasil;}
         function updateCountdown() {
     // Tanggal target: 30 Maret 2026 jam 10 pagi
     var eventDate = new Date("March 30, 2026 10:00:00").getTime();
@@ -369,9 +360,8 @@ setInterval(updateCountdown, 1000);
             <br>
             <a href="https://wa.me/6281360758627" target="_blank" style="background-color: #8b0000; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block;">Daftar Disini</a>
         </div>
-        
         </div>
-</div>
+        </div>
 
     <div id="admin" class="page">
         <body onload="showPage('login'); updateCountdown();">
