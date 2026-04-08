@@ -184,3 +184,32 @@ iframe, img {
     border-radius: 5px;
     font-weight: bold;
 }
+
+
+/* Pastikan body tidak tertutup navbar yang fix di atas */
+body {
+    padding-top: 60px;
+    background-color: #F5F0D5; /* Warna krem kamu */
+}
+
+/* Warna menu saat di laptop (teks putih agar kontras dengan merah) */
+.navbar .nav > li > a {
+    color: white !important;
+}
+
+/* Warna menu saat di HP (karena latarnya putih/krem saat terbuka) */
+@media (max-width: 979px) {
+    .nav-collapse .nav > li > a {
+        color: #000000 !important; /* Teks Hitam di HP sesuai permintaanmu */
+        font-weight: bold;
+    }
+    .navbar-fixed-top {
+        margin-bottom: 0;
+    }
+}
+
+/* Warna tombol hamburger */
+.btn-navbar {
+    background-color: #222 !important;
+    background-image: none !important;
+}
